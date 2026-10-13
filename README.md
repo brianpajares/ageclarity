@@ -13,6 +13,12 @@ npm run dev
 
 Open `http://localhost:3000`. The app supports Spanish (`/es`), English (`/en`), and Portuguese (`/pt`).
 
+## Deploy on Vercel
+
+Import this repository with **Framework Preset: Next.js**, **Root Directory: `./`**, and the default build and output settings. The repository also declares the Next.js framework in `vercel.json`. The production deployment must use the latest commit on `main`. The root URL (`/`) serves the Spanish app directly; `/es`, `/en`, and `/pt` are also available.
+
+If Vercel reports `404 NOT_FOUND` for `/`, check the production deployment's source commit and these project settings before redeploying. A deployment marked Ready only confirms the build completed; it does not establish that Vercel selected the Next.js framework or the intended project root.
+
 ## Checks
 
 ```bash

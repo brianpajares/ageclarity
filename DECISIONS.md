@@ -2,6 +2,8 @@
 
 Updated: 2026-10-13
 
+- Explicitly set the Vercel framework to Next.js in `vercel.json` after a production project returned `404 NOT_FOUND` even though the local production build served `/`. This is a deployment configuration change; Vercel project settings and the active production commit still require inspection in the Vercel dashboard. No local application behavior is changed.
+
 - Implemented the supplied Clinical PhenoAge model in TypeScript and kept the source reference, model assets, and original Stage 3 package in the repository. Golden test vectors cover all 18 successful and 10 invalid cases.
 - Kept calculation in browser memory and made the UI independent of a backend. The standalone API route returns only preview outputs and does not persist input. This reduces health-data exposure while report delivery infrastructure is not configured.
 - Report/email delivery, Supabase persistence, application-level encryption, lead tokens, Turnstile, rate limiting, private PDF delivery, admin/MFA, Stripe, and production legal review remain disabled or incomplete. No service credentials were supplied; no fake service integrations or purchases were enabled.
