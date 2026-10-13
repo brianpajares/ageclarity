@@ -6,9 +6,6 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
-  async redirects() {
-    return [{ source: "/", destination: "/es", permanent: false }];
-  },
   async headers() {
     return [
       {
