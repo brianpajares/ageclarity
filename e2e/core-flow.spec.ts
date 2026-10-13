@@ -1,5 +1,11 @@
 import { expect, test } from "@playwright/test";
 
+test("routes the site root to a supported locale", async ({ page }) => {
+  await page.goto("/");
+  await expect(page).toHaveURL(/\/(es|en|pt)$/);
+  await expect(page.getByRole("heading").first()).toBeVisible();
+});
+
 test("calculates a local preview and supports changing language", async ({ page }) => {
   const submittedCalculationRequests: string[] = [];
   page.on("request", (request) => {
