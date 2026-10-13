@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "name": "landing_view",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    },
+    {
+      "name": "calculator_start",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    },
+    {
+      "name": "step_complete",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    },
+    {
+      "name": "validation_error_type",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    },
+    {
+      "name": "result_view",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    },
+    {
+      "name": "report_preview_view",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    },
+    {
+      "name": "consent_selected",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    },
+    {
+      "name": "demo_request",
+      "properties": [
+        "locale",
+        "country",
+        "device_type",
+        "session_random_id"
+      ],
+      "no_phi": true
+    }
+  ],
+  "never_collect": [
+    "biomarker_values",
+    "email",
+    "date_of_birth",
+    "result_phenoage",
+    "age_gap",
+    "free_text_medical_data"
+  ]
+}

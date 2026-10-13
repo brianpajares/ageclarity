@@ -1,0 +1,600 @@
+{
+  "one_liner": "Para adultos de 30–60 años que reciben análisis de sangre pero no saben convertirlos en una señal comprensible de envejecimiento, AgeClarity estima Clinical PhenoAge a partir de su edad y 9 biomarcadores rutinarios y entrega una edad fenotípica, su brecha frente a la edad cronológica y los factores del modelo que más mueven el resultado para que sepan qué conversar y seguir con un profesional de salud.",
+  "segments": [
+    {
+      "name": "B2C · adultos 30–60 con analítica reciente y curiosidad por longevidad",
+      "size_estimate": "~5–10M usuarios de alta intención/año en los 6 países prioritarios (estimación)",
+      "calculation": "Población combinada ≈524.5M (Banco Mundial 2024). Supuesto: 38% tiene 30–59 años ≈199M; 25% recibe/consulta analítica anual ≈50M; 10–20% muestra intención de cuantificación/longevidad ≈5–10M. Supuestos a validar.",
+      "need": "Entender una señal global sin pagar un nuevo test."
+    },
+    {
+      "name": "B2B2C · laboratorios clínicos y cadenas de chequeo",
+      "size_estimate": "500–2,000 organizaciones partner-candidate en países prioritarios (estimación preliminar)",
+      "calculation": "No hay censo armonizado comparable entre países; rango operativo para outbound, no TAM publicado. Priorizar cadenas y laboratorios con portal digital y hemograma+bioquímica+CRP.",
+      "need": "Añadir una capa premium/diferenciadora a pruebas ya vendidas."
+    },
+    {
+      "name": "B2B · médicos, nutricionistas y coaches con foco preventivo",
+      "size_estimate": "250k–500k profesionales targetables (estimación preliminar)",
+      "calculation": "Hipótesis comercial de subsegmento regional; requiere cuantificación por registro profesional antes de forecast.",
+      "need": "Informe consistente y presentable para contextualizar resultados sin rehacer cálculos."
+    }
+  ],
+  "countries": [
+    {
+      "rank": 1,
+      "country": "México",
+      "why": "130.9M habitantes; gran mercado hispanohablante, buen SEO potencial y posibilidad de alianzas con cadenas privadas.",
+      "source_id": "S22"
+    },
+    {
+      "rank": 2,
+      "country": "España",
+      "why": "48.85M; mayor poder adquisitivo y mercado de wellness digital; exige disciplina GDPR/MDR desde el diseño.",
+      "source_id": "S24"
+    },
+    {
+      "rank": 3,
+      "country": "Brasil",
+      "why": "212.0M; mayor población del grupo y expansión natural en portugués; requiere localización PT-BR y revisión ANVISA/LGPD.",
+      "source_id": "S22"
+    },
+    {
+      "rank": 4,
+      "country": "Colombia",
+      "why": "52.9M; mercado hispano relevante y buena continuidad lingüística.",
+      "source_id": "S23"
+    },
+    {
+      "rank": 5,
+      "country": "Perú",
+      "why": "34.2M; mercado menor pero evidencia local de oferta de longevidad premium (Zentum) útil para partnerships.",
+      "source_id": "S23/S19"
+    },
+    {
+      "rank": 6,
+      "country": "Argentina",
+      "why": "45.7M; comunidad de salud/fitness sofisticada; pricing debe absorber volatilidad monetaria.",
+      "source_id": "S23"
+    }
+  ],
+  "pain_stats": [
+    {
+      "dato": "Demografía: la población 60+ llegará a 1.4 mil millones en 2030 y 2.1 mil millones en 2050.",
+      "cifra": "1.4B / 2.1B",
+      "año": 2025,
+      "region": "Global",
+      "source_id": "S01"
+    },
+    {
+      "dato": "Volumen de laboratorios: ~14 mil millones de pruebas al año.",
+      "cifra": "~14B/año",
+      "año": 2024,
+      "region": "EE.UU.",
+      "source_id": "S02"
+    },
+    {
+      "dato": "Adultos que ven resultados antes de hablar con su profesional.",
+      "cifra": "68.6%",
+      "año": 2024,
+      "region": "EE.UU.",
+      "source_id": "S03"
+    },
+    {
+      "dato": "Estimación de adultos ponderados que vieron resultados antes del profesional.",
+      "cifra": "~119.8M",
+      "año": 2024,
+      "region": "EE.UU.",
+      "source_id": "S04",
+      "estimacion": "174.673M × 68.6%"
+    },
+    {
+      "dato": "Estimación con comprensión pobre de esos resultados.",
+      "cifra": "~7.9M",
+      "año": 2024,
+      "region": "EE.UU.",
+      "source_id": "S04",
+      "estimacion": "119.826M × 6.6%"
+    },
+    {
+      "dato": "Estimación con comprensión pobre o solo 'fairly well'.",
+      "cifra": "~40.0M",
+      "año": 2024,
+      "region": "EE.UU.",
+      "source_id": "S04",
+      "estimacion": "119.826M × (6.6%+26.8%)"
+    },
+    {
+      "dato": "Con resultados anormales, proporción que reportó mayor preocupación.",
+      "cifra": "16.5% vs 5.0% con normales",
+      "año": 2023,
+      "region": "EE.UU.",
+      "source_id": "S05"
+    },
+    {
+      "dato": "Entre quienes buscaron información adicional, proporción que hizo búsqueda en internet.",
+      "cifra": "39.9%",
+      "año": 2023,
+      "region": "EE.UU.",
+      "source_id": "S06"
+    },
+    {
+      "dato": "Coste actual de alternativas de medición dedicada.",
+      "cifra": "US$249 Tally; US$349 NOVOS; ~EUR499 GlycanAge",
+      "año": 2026,
+      "region": "EE.UU./internacional",
+      "source_id": "S13/S14/S15"
+    }
+  ],
+  "demand_signals": [
+    {
+      "keyword": "biological age test + check biological age",
+      "language": "EN",
+      "volume_estimate": "7,200/mes",
+      "trend": "Demanda confirmada por tercero con Keyword Planner",
+      "confidence": "Media",
+      "source_id": "S20"
+    },
+    {
+      "keyword": "biological age test",
+      "language": "EN",
+      "volume_estimate": "7,600/mes",
+      "trend": "Alta intención de compra",
+      "confidence": "Media",
+      "source_id": "S21"
+    },
+    {
+      "keyword": "edad biológica / test de edad biológica",
+      "language": "ES",
+      "volume_estimate": "1,400–4,300/mes (estimación preliminar)",
+      "trend": "Validar en Keyword Planner antes de invertir",
+      "confidence": "Baja",
+      "calculation": "20–60% del benchmark EN de 7,200; no es dato observado"
+    },
+    {
+      "keyword": "idade biológica / teste de idade biológica",
+      "language": "PT-BR",
+      "volume_estimate": "900–2,900/mes (estimación preliminar)",
+      "trend": "Validar en Keyword Planner antes de invertir",
+      "confidence": "Baja",
+      "calculation": "12.5–40% del benchmark EN de 7,200; no es dato observado"
+    },
+    {
+      "keyword": "PhenoAge calculator / calculadora PhenoAge",
+      "language": "EN/ES/PT",
+      "volume_estimate": "360–1,080/mes (estimación preliminar)",
+      "trend": "SERP 2026 ya tiene múltiples calculadoras gratuitas",
+      "confidence": "Baja",
+      "calculation": "5–15% del benchmark EN de 7,200; no es dato observado"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "HealthOS PhenoAge",
+      "price": "Gratis",
+      "model": "Calculadora web / adquisición SEO",
+      "strength": "Carga PDF/foto, unidades, cálculo browser-side",
+      "weakness": "El número es commodity; experiencia principalmente en inglés; no se observa propuesta white-label de laboratorio",
+      "source_id": "S17"
+    },
+    {
+      "name": "AgeTrace",
+      "price": "Gratis",
+      "model": "App iPhone",
+      "strength": "PhenoAge + seguimiento + otras calculadoras",
+      "weakness": "Solo iPhone; idiomas inglés/turco; sin capa B2B2C de laboratorio",
+      "source_id": "S16"
+    },
+    {
+      "name": "LabAge",
+      "price": "Gratis / open source MIT",
+      "model": "Proyecto web open source",
+      "strength": "Percentiles, contribuciones, NHANES",
+      "weakness": "Demo/proyecto; barrera de confianza comercial y soporte; no es producto de laboratorio listo",
+      "source_id": "S18"
+    },
+    {
+      "name": "Function Health",
+      "price": "US$365/año",
+      "model": "Membresía de laboratorio + interpretación",
+      "strength": "160+ pruebas, revisión clínica, longitudinal",
+      "weakness": "Requiere comprar el servicio completo; principalmente EE.UU.; exceso de alcance para quien ya tiene analítica",
+      "source_id": "S12"
+    },
+    {
+      "name": "NOVOS Age",
+      "price": "US$349/test",
+      "model": "Kit dedicado de longevidad",
+      "strength": "Informe extenso y métricas múltiples",
+      "weakness": "Nueva muestra; 2–4 semanas; EE.UU./Canadá",
+      "source_id": "S13"
+    },
+    {
+      "name": "Tally Health",
+      "price": "US$249/test o US$129/mes",
+      "model": "Epigenética + membresía/suplementos",
+      "strength": "Marca de consumo y seguimiento",
+      "weakness": "Nueva muestra, semanas de espera y coste recurrente alto",
+      "source_id": "S14"
+    },
+    {
+      "name": "GlycanAge",
+      "price": "~EUR499/test",
+      "model": "Test de glicanos + interpretación",
+      "strength": "Producto premium especializado",
+      "weakness": "Nueva muestra, coste alto y no reutiliza laboratorios rutinarios",
+      "source_id": "S15"
+    },
+    {
+      "name": "Zentum",
+      "price": "Desde S/599",
+      "model": "Panel de longevidad + plan + dashboard",
+      "strength": "Experiencia en español y validación de disposición de pago en LATAM",
+      "weakness": "Servicio completo con 100+ biomarcadores; coste/operación altos; no es una capa ligera sobre análisis existentes",
+      "source_id": "S19"
+    }
+  ],
+  "solution": {
+    "chosen": "Bring-your-own-labs + AgeClarity Report",
+    "alternatives": [
+      {
+        "name": "A. Calculadora instantánea pura",
+        "description": "9 biomarcadores + edad → número gratuito y delta.",
+        "value": 3,
+        "precision": 5,
+        "input_ease": 3,
+        "op_cost": 5,
+        "virality": 3,
+        "legal_safety": 4,
+        "total": 23
+      },
+      {
+        "name": "B. Bring-your-own-labs + informe explicativo (elegida)",
+        "description": "Cálculo + quality gates + drivers contrafactuales + preguntas para profesional + historial posterior.",
+        "value": 5,
+        "precision": 5,
+        "input_ease": 4,
+        "op_cost": 5,
+        "virality": 4,
+        "legal_safety": 4,
+        "total": 27
+      },
+      {
+        "name": "C. Panel BioAge vendido con toma de muestra",
+        "description": "Laboratorio ordena/vende los 9 marcadores y entrega informe white-label.",
+        "value": 5,
+        "precision": 5,
+        "input_ease": 5,
+        "op_cost": 2,
+        "virality": 3,
+        "legal_safety": 2,
+        "total": 22
+      }
+    ],
+    "scoring_note": "Escala 1–5; en costo operativo y seguridad legal, 5 = mejor (menor costo/menor riesgo).",
+    "why": "La calculadora sola ya está commoditizada por opciones gratuitas. El valor defendible es interpretación confiable, control de unidades, trazabilidad, drivers transparentes y distribución con laboratorios. El panel propio queda para v2/B2B2C por operación y regulación."
+  },
+  "prediction": {
+    "target": "Phenotypic Age (Clinical PhenoAge) y brecha PhenoAge - edad cronológica",
+    "unit": "años",
+    "horizon": "snapshot actual; internamente la fórmula parte de riesgo de mortalidad a 120 meses (10 años), transformado a una edad equivalente",
+    "granularity": "individual por fecha de analítica",
+    "problem_type": "modelo determinista publicado: regresión de riesgo/parametric proportional hazards Gompertz transformado a edad; no LLM",
+    "model_candidates": [
+      "Levine et al. 2018, ecuación clínica original (fuente de verdad científica).",
+      "BioAge R package, phenoage_calc.R, como implementación independiente de verificación.",
+      "Reproducción sobre NHANES III/IV para pruebas de paridad y validación estadística.",
+      "Implementaciones web externas (HealthOS/FixFirst/BioAgeIQ) solo para differential testing, nunca como fuente de verdad."
+    ],
+    "formula": "xb = -19.90667 -0.03359355*albumin_gL +0.009506491*creatinine_umolL +0.1953192*glucose_mmolL +0.09536762*ln(CRP_mg_dL) -0.01199984*lymphocyte_pct +0.02676401*MCV_fL +0.3306156*RDW_pct +0.001868778*ALP_UL +0.05542406*WBC_10e3uL +0.08035356*age; M=1-exp((-1.51714*exp(xb))/0.007692696); PhenoAge=ln(-0.0055305*ln(1-M))/0.090165+141.50225",
+    "attribution": "No usar coef×desviación/0.090165 como 'años causados' sin advertencia. MVP: impacto contrafactual por marcador = PhenoAge(actual) - PhenoAge(mismo perfil reemplazando solo marcador i por referencia). Es descriptivo, no causal. Agent 2 debe fijar la referencia; Shapley exacto sobre 9 marcadores puede evaluarse para atribución aditiva."
+  },
+  "inputs_hypothesis": [
+    {
+      "input": "Edad",
+      "required": "sí",
+      "time": "<10 s",
+      "notes": "años cumplidos; entra en la fórmula"
+    },
+    {
+      "input": "Albúmina",
+      "required": "sí",
+      "time": "copiar analítica",
+      "notes": "aceptar g/L o g/dL y convertir"
+    },
+    {
+      "input": "Creatinina",
+      "required": "sí",
+      "time": "copiar analítica",
+      "notes": "aceptar µmol/L o mg/dL y convertir"
+    },
+    {
+      "input": "Glucosa",
+      "required": "sí",
+      "time": "copiar analítica",
+      "notes": "aceptar mmol/L o mg/dL y convertir"
+    },
+    {
+      "input": "PCR / hs-CRP",
+      "required": "sí",
+      "time": "copiar analítica",
+      "notes": "aceptar mg/dL o mg/L; debe ser >0 para log; no inventar valores censurados"
+    },
+    {
+      "input": "Hemograma (linfocitos %, VCM/MCV, ADE/RDW, leucocitos/WBC)",
+      "required": "sí",
+      "time": "copiar 4 valores",
+      "notes": "WBC x10^9/L y x10^3/µL son numéricamente equivalentes"
+    },
+    {
+      "input": "Fosfatasa alcalina (ALP)",
+      "required": "sí",
+      "time": "copiar analítica",
+      "notes": "U/L"
+    },
+    {
+      "input": "Fecha de analítica + país/unidades",
+      "required": "fecha recomendada; país opcional",
+      "time": "<10 s",
+      "notes": "no cambia la fórmula; sirve para calidad, localización y tendencias"
+    }
+  ],
+  "mvp": {
+    "in": [
+      "Landing y flujo trilingüe ES/EN/PT-BR.",
+      "Entrada manual optimizada y opción de pegar texto estructurado; autoconversión explícita de unidades.",
+      "Cálculo determinista client-side/server-side sin LLM para el número.",
+      "Quality gates: faltantes, unidades improbables, CRP<=0/censurada, plausibilidad fisiológica amplia y confirmación antes de calcular.",
+      "Vista previa <90 s: PhenoAge, brecha vs edad y explicación metodológica corta.",
+      "Semáforo orientativo de brecha solo como UX, no como umbral clínico; evitar afirmar que ±2 años es una categoría validada.",
+      "Top drivers mediante recomputación contrafactual si y solo si la referencia queda validada por Agent 2; etiqueta 'impacto del modelo, no causa'.",
+      "Fase 1: CTA a email para recibir informe completo; consentimiento explícito; copia al dueño solo de forma pseudonimizada/minimizada y conforme a base legal.",
+      "Informe completo: contexto por marcador, preguntas para comentar con profesional, limitaciones, método y fecha para repetir.",
+      "Analytics de funnel y eventos de error/unidad sin almacenar valores clínicos en analítica de producto."
+    ],
+    "out": [
+      "Diagnóstico, tratamiento, prescripción, suplementos o afirmaciones de reversión del envejecimiento.",
+      "Predicción de esperanza de vida individual.",
+      "Cociente PhenoAge/edad presentado como 'ritmo de envejecimiento'.",
+      "Pago en Fase 1.",
+      "Pedido/toma de muestra propia.",
+      "Integración EHR/LIS, dashboard profesional, white-label y multiusuario.",
+      "Interpretación por LLM de la fórmula o sustitución de biomarcadores faltantes.",
+      "Carga OCR de PDFs/fotos si compromete el plazo del MVP; preferir pegar/manual primero."
+    ],
+    "v2": [
+      "OCR/parseo de PDF/foto con confirmación humana campo por campo.",
+      "Pago y reportes premium.",
+      "Historial longitudinal con intervalos y comparaciones de misma condición de extracción.",
+      "Percentiles basados en NHANES y/o cohortes regionales, si Agent 2 los valida.",
+      "White-label para laboratorios y portal profesional.",
+      "Importación batch/API para partners.",
+      "Atribución Shapley exacta y perfiles de referencia estratificados si se justifican estadísticamente."
+    ]
+  },
+  "metrics": {
+    "product": [
+      {
+        "metric": "Visita → inicio",
+        "target": "≥45%"
+      },
+      {
+        "metric": "Inicio → vista previa",
+        "target": "≥60%"
+      },
+      {
+        "metric": "Vista previa → solicitud de informe/email (Fase 1)",
+        "target": "≥12% validación; ≥20% objetivo maduro"
+      },
+      {
+        "metric": "Solicitud → pago (Fase 2)",
+        "target": "≥55% de leads con intención; revisar tras 100 checkouts"
+      },
+      {
+        "metric": "Visita → pago compuesto (Fase 2)",
+        "target": "≈3.0% con 45%×60%×20%×55%=2.97%"
+      },
+      {
+        "metric": "Laboratorios",
+        "target": "≥2 interesados en validación; ≥1 alianza en 90 días"
+      }
+    ],
+    "model": [
+      {
+        "metric": "MAE vs BioAge R / casos de referencia",
+        "target": "≤0.01 años en ≥100 casos válidos"
+      },
+      {
+        "metric": "Error máximo por conversiones de unidad equivalentes",
+        "target": "≤0.01 años"
+      },
+      {
+        "metric": "Detección de input inválido/missing en suite QA",
+        "target": "100%"
+      },
+      {
+        "metric": "Reproducción NHANES",
+        "target": "r≥0.999 entre implementación y phenoage0 del paquete/dataset de referencia, si los datos son reproducibles"
+      },
+      {
+        "metric": "Chequeo externo de asociación",
+        "target": "HR all-cause por año cercano a 1.09 publicado; tolerancia preliminar ±0.02 en reproducción comparable"
+      }
+    ],
+    "business": [
+      {
+        "metric": "CAC objetivo B2C",
+        "target": "≤US$4.50 por primer comprador; adquisición principalmente orgánica/partner"
+      },
+      {
+        "metric": "Ingreso por usuario pagador 90 días",
+        "target": "≥US$15 equivalente; ≥US$18 con upsell/retest"
+      },
+      {
+        "metric": "Margen bruto por informe digital",
+        "target": "≥85%"
+      },
+      {
+        "metric": "Payback CAC",
+        "target": "primer pago"
+      },
+      {
+        "metric": "Revenue B2B2C piloto",
+        "target": "US$3–6 equivalente por informe o 20–30% de retail, hipótesis a negociar"
+      }
+    ]
+  },
+  "business_model": {
+    "free": "Vista previa: PhenoAge, brecha vs edad, control de datos/unidades y explicación breve. Sin almacenamiento por defecto.",
+    "paid": "Informe AgeClarity completo: drivers del modelo, tabla de 9 biomarcadores, método, preguntas para profesional, comparativa longitudinal cuando exista. El pago se activa en Fase 2.",
+    "pricing": [
+      {
+        "country": "España",
+        "price": "EUR 12",
+        "logic": "ancla cercana a US$15 con menor ticket digital local; hipótesis"
+      },
+      {
+        "country": "México",
+        "price": "MXN 199",
+        "logic": "ticket psicológico ~US$10–12; hipótesis PPP/WTP"
+      },
+      {
+        "country": "Brasil",
+        "price": "BRL 49",
+        "logic": "ticket ~US$9–10; localización PT-BR; hipótesis PPP/WTP"
+      },
+      {
+        "country": "Colombia",
+        "price": "COP 39,900",
+        "logic": "ticket ~US$10; hipótesis PPP/WTP"
+      },
+      {
+        "country": "Perú",
+        "price": "PEN 39",
+        "logic": "ticket ~US$10; muy por debajo de paneles locales de S/599; hipótesis"
+      },
+      {
+        "country": "Argentina",
+        "price": "US$8 equivalente en moneda local al checkout",
+        "logic": "protege de volatilidad; precio menor por poder adquisitivo; hipótesis"
+      },
+      {
+        "country": "EE.UU. (benchmark futuro)",
+        "price": "US$15",
+        "logic": "ancla original y alternativa muy inferior a tests dedicados US$249–499"
+      }
+    ],
+    "upsells": [
+      "Comparación con segundo análisis / trend report.",
+      "Bundle de 2 informes anuales.",
+      "PDF profesional/white-label para consulta.",
+      "Licencia profesional: hipótesis US$29/mes con cupo de informes.",
+      "B2B2C laboratorio: fee US$3–6 equivalente por informe o revenue share."
+    ],
+    "channels": [
+      "SEO programático trilingüe alrededor de PhenoAge, unidades, biomarcadores y 'biological age blood test'.",
+      "Comunidades de biohacking/longevity y quantified-self; priorizar educación, no promesas.",
+      "Creadores de salud/fitness con demostración usando datos ficticios.",
+      "Laboratorios y clínicas de chequeo como canal del momento de necesidad.",
+      "Médicos/nutricionistas como referral y distribución del PDF."
+    ],
+    "viral_hook": "Tarjeta compartible 'My PhenoAge gap' sin valores clínicos, con fecha y disclaimer; mejor como señal privada/social que como ranking.",
+    "phases": [
+      "Fase 1 VALIDACIÓN: preview gratis → email → informe completo; sin cobro. El usuario consiente el tratamiento de datos. La copia al dueño debe ser pseudonimizada/minimizada y solo si la base legal y consentimiento lo permiten.",
+      "Fase 2 COBRO: pasarela de pago antes de liberar informe completo; A/B test de precios por país.",
+      "Fase 3 B2B2C: laboratorio incluye 'AgeClarity Panel' o añade el informe a hemograma+bioquímica+PCR."
+    ]
+  },
+  "risks": [
+    {
+      "risk": "Regulatorio / dispositivo médico",
+      "severity": "Alta",
+      "why": "Procesa resultados de laboratorio y podría percibirse como diagnóstico/triage si recomienda qué 'tratar'.",
+      "mitigation": "Intended use de wellness/información; no diagnosticar ni tratar; no lifespan claims; wording 'qué comentar/revisar con profesional'; revisión legal país por país antes de B2B2C. FDA General Wellness es guía, no garantía. Perú/DIGEMID y UE requieren evaluación específica."
+    },
+    {
+      "risk": "Privacidad de datos de salud",
+      "severity": "Alta",
+      "why": "Email + biomarcadores son datos sensibles.",
+      "mitigation": "Minimización, cifrado, no analytics con valores, borrado corto, consentimiento granular, pseudonimización. Owner copy de Fase 1 solo con base legal/consentimiento; preferir copia de entrega sin datos crudos."
+    },
+    {
+      "risk": "Unidades / errores de entrada",
+      "severity": "Alta",
+      "why": "La fórmula es extremadamente sensible a unidades; CRP usa log.",
+      "mitigation": "Unidades explícitas, conversiones deterministas, rangos de plausibilidad, confirmación, tests de invariancia y mensajes para valores '<x'."
+    },
+    {
+      "risk": "Validez externa",
+      "severity": "Media-alta",
+      "why": "Modelo entrenado/validado en población NHANES de EE.UU.; no equivale a medición universal de envejecimiento.",
+      "mitigation": "Mostrar procedencia, no ocultar incertidumbre; Agent 2 evalúa desempeño por subgrupos y cohortes abiertas; no crear percentiles locales sin datos."
+    },
+    {
+      "risk": "Variación aguda",
+      "severity": "Media",
+      "why": "CRP, WBC y glucosa pueden cambiar por infección, ayuno, ejercicio o momento de muestra.",
+      "mitigation": "Preguntar fecha/condición; advertir que un snapshot no es destino; favorecer seguimiento comparable y repetir tras condiciones estables si un profesional lo considera."
+    },
+    {
+      "risk": "Commoditización",
+      "severity": "Alta",
+      "why": "Ya hay calculadoras PhenoAge gratuitas y open source.",
+      "mitigation": "No cobrar por el número: vender confianza, data-quality, drivers auditables, trilingüe, longitudinalidad y distribución partner."
+    },
+    {
+      "risk": "Atribución engañosa",
+      "severity": "Alta",
+      "why": "Decir 'este biomarcador te suma X años' puede sonar causal.",
+      "mitigation": "Usar impacto contrafactual del modelo, referencia definida, wording no causal; considerar Shapley y enseñar metodología."
+    },
+    {
+      "risk": "Ansiedad / daño reputacional",
+      "severity": "Media",
+      "why": "Una 'edad' mayor puede alarmar.",
+      "mitigation": "Evitar rojo/alarma extrema, explicar variabilidad, no umbrales clínicos inventados, CTA a conversar con profesional si valores están fuera de rango de su laboratorio."
+    }
+  ],
+  "scorecard": {
+    "market": {
+      "weight": 25,
+      "score": 21,
+      "reason": "Mercado global grande y envejecimiento estructural; categoría de biological age ya tiene demanda."
+    },
+    "pain": {
+      "weight": 20,
+      "score": 16,
+      "reason": "Muchísimo volumen de resultados y evidencia de fricción de comprensión; dolor es informacional, no siempre urgente."
+    },
+    "willingness_to_pay": {
+      "weight": 20,
+      "score": 14,
+      "reason": "Tests dedicados muestran WTP alto, pero cálculo PhenoAge aislado es gratis en varios sitios."
+    },
+    "data_model_feasibility": {
+      "weight": 15,
+      "score": 15,
+      "reason": "Fórmula publicada, datos NHANES y paquete BioAge abierto; riesgo principal son unidades/referencias, no modelado."
+    },
+    "virality": {
+      "weight": 10,
+      "score": 7,
+      "reason": "La brecha de edad es compartible, pero salud es sensible y debe evitar gamificación dañina."
+    },
+    "mvp_speed": {
+      "weight": 10,
+      "score": 9,
+      "reason": "Formulario + cálculo determinista + email/report es rápido; OCR y pagos pueden esperar."
+    },
+    "total": 82
+  },
+  "verdict": "GO",
+  "verdict_note": "GO 82/100. No es un GO para 'cobrar por una calculadora'; es un GO para una capa de interpretación confiable, trilingüe y partner-ready sobre analíticas existentes.",
+  "positioning_changes": [
+    "Nombre de trabajo cambiado de BioAge a AgeClarity para diferenciarse del paquete científico BioAge y competir por claridad, no por propiedad del algoritmo.",
+    "Se elimina 'PhenoAge/edad = ritmo de envejecimiento' como claim: ese cociente no es una métrica de pace-of-aging validada.",
+    "La banda ±2 años se mantiene, si se usa, solo como convención UX explícitamente no clínica; no se presenta como umbral publicado.",
+    "La contribución por biomarcador pasa de aproximación lineal a recomputación contrafactual del modelo, con etiqueta no causal.",
+    "El producto de pago vende informe, trazabilidad, control de unidades, longitudinalidad y canal laboratorio; el número básico queda gratis."
+  ]
+}

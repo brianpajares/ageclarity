@@ -1,0 +1,15 @@
+id,dato,url,licencia,fecha,estado
+S201,"Definición, desarrollo y validación de Clinical Phenotypic Age en NHANES IV",https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002718,CC0 (artículo PLOS Medicine),2018-12-31,verificado
+S202,Corrección de la ecuación publicada de Phenotypic Age (paso faltante; variante 0.09165),https://pmc.ncbi.nlm.nih.gov/articles/PMC6388911/,CC BY,2019-02-25,verificado
+S203,Implementación BioAge R actual de phenoage0; coeficientes de alta precisión y denominador 0.090165,https://github.com/dayoonkwon/BioAge/blob/master/R/phenoage_calc.R,GPL-3.0 (solo verificación; no se incorpora código),2026-10-13,verificado
+S204,Actividad BioAge: restauración/actualización de constante PhenoAge a 0.090165 en abril de 2026,https://github.com/dayoonkwon/BioAge/activity,GPL-3.0 repo; metadatos GitHub,2026-04-02,verificado
+S205,"Licencia y alcance del paquete BioAge; KDM, PhenoAge y homeostatic dysregulation",https://github.com/dayoonkwon/BioAge/blob/master/DESCRIPTION,GPL-3.0,2026-10-13,verificado
+S206,"Conversiones NHANES: albúmina ×10, creatinina ×88.4, glucosa ×0.05551",https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2011/DataFiles/BIOPRO_G.htm,U.S. government / NHANES documentation; citar fuente,2013-01-01,verificado
+S207,Unidades requeridas por PhenoAge original según mantenedor BioAge,https://github.com/dayoonkwon/BioAge/discussions/35,GitHub content; usar como evidencia secundaria,2026-04-02,verificado
+S208,Rango de desarrollo/validación y HR de mortalidad de Phenotypic Age en NHANES IV,https://pmc.ncbi.nlm.nih.gov/articles/PMC6312200/,CC0 / open access,2018-12-31,verificado
+S209,NHANES hs-CRP: LLOD 0.15 mg/L y tratamiento de resultados bajo límite de detección,https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/HSCRP_L.htm,U.S. government / NHANES documentation; citar fuente,2024-09-01,verificado
+S210,"World Bank WDI: PPP conversion factor, metodología y licencia CC BY 4.0",https://data.worldbank.org/indicator/PA.NUS.PPP,CC BY-4.0,2026-10-13,verificado
+S211,"World Bank PPP 2025: España 0.57 LCU/int$, Perú 1.84; México 10.33; Brasil 2.55; Colombia 1532.72; Argentina 567.30",https://wdi.worldbank.org/table/4.16,CC BY-4.0,2026-10-13,verificado
+S212,"ComputBioAge, implementación KDM open source",https://github.com/ComputationalAgingLab/ComputBioAge,MIT,2026-10-13,verificado
+S213,Aging.AI: DNN en analítica sanguínea; MAE 5.55 años para edad cronológica,https://www.aging-us.com/article/100968/text,CC BY (paper); pesos del modelo no publicados,2016-05-18,verificado
+S214,NCHS Data User Agreement para archivos públicos NHANES,https://www.cdc.gov/nchs/policy/data-user-agreement.html,Uso sujeto a Data User Agreement NCHS,2024-09-17,verificado

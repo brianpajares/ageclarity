@@ -1,0 +1,327 @@
+{
+  "app_slug": "ageclarity",
+  "app_name": "AgeClarity",
+  "version": "4.0.0",
+  "stage_completed": 4,
+  "status": "READY_TO_BUILD",
+  "next_agent": "coding_agent",
+  "created_at": "2026-10-13T16:01:00-05:00",
+  "files": [
+    "TASKS.md",
+    "CLAUDE.md",
+    "BUILD_PROMPT.md",
+    "00_START_HERE.md",
+    "README_START_HERE.md",
+    "AGENTS.md",
+    ".env.example",
+    "model/model_card.md",
+    "model/engine_reference.py",
+    "model/qa_engine.py",
+    "ux/report_layout.md",
+    "ux/components.md",
+    "ux/sitemap_flows.md",
+    "ux/ux_spec.md",
+    "ux/prototype.html",
+    "spec/copy_i18n.json",
+    "spec/test_vectors.json",
+    "spec/analytics_events.json",
+    "spec/outputs_spec.json",
+    "spec/monetizacion.json",
+    "spec/openapi.yaml",
+    "spec/drive_manifest.json",
+    "spec/db_schema.sql",
+    "spec/design_tokens.json",
+    "spec/model_spec.json",
+    "spec/inputs.schema.json",
+    "original_stage3/00_START_HERE.md",
+    "docs/TRACTION_PLAN.md",
+    "docs/final_audit.md",
+    "docs/PRD.md",
+    "docs/ACCEPTANCE_TESTS.md",
+    "docs/LAUNCH_CHECKLIST.md",
+    "docs/decisions_log.md",
+    "docs/DRIVE_SETUP.md",
+    "docs/PRD.docx",
+    "docs/brief_estrategico.md",
+    "docs/qa_report.md",
+    "drive/model/engine_reference.py",
+    "drive/model/coefficients.json",
+    "drive/model/outputs_spec.json",
+    "drive/model/model_spec.json",
+    "drive/model/inputs.schema.json",
+    "drive/base/base_ageclarity.xlsx",
+    "drive/templates/report_template.json",
+    "drive/docs/model_card.md",
+    "original_stage3/02_datos_modelo/test_vectors.json",
+    "original_stage3/02_datos_modelo/model_card.md",
+    "original_stage3/02_datos_modelo/engine_reference.py",
+    "original_stage3/02_datos_modelo/estudio_modelos.md",
+    "original_stage3/02_datos_modelo/outputs_spec.json",
+    "original_stage3/02_datos_modelo/monetizacion.json",
+    "original_stage3/02_datos_modelo/drive_manifest.json",
+    "original_stage3/02_datos_modelo/fuentes_datos.csv",
+    "original_stage3/02_datos_modelo/model_spec.json",
+    "original_stage3/02_datos_modelo/inputs.schema.json",
+    "original_stage3/03_qa_ux/copy_i18n.json",
+    "original_stage3/03_qa_ux/report_layout.md",
+    "original_stage3/03_qa_ux/analytics_events.json",
+    "original_stage3/03_qa_ux/components.md",
+    "original_stage3/03_qa_ux/qa_engine.py",
+    "original_stage3/03_qa_ux/sitemap_flows.md",
+    "original_stage3/03_qa_ux/ux_spec.md",
+    "original_stage3/03_qa_ux/qa_checks.json",
+    "original_stage3/03_qa_ux/prototype.html",
+    "original_stage3/03_qa_ux/design_tokens.json",
+    "original_stage3/03_qa_ux/qa_report.md",
+    "original_stage3/01_estrategia/brief.json",
+    "original_stage3/01_estrategia/fuentes_mercado.csv",
+    "original_stage3/01_estrategia/brief_estrategico.docx",
+    "original_stage3/01_estrategia/brief_estrategico.md",
+    "original_stage3/02_datos_modelo/ingest/ingest.py",
+    "original_stage3/02_datos_modelo/drive/model/engine_reference.py",
+    "original_stage3/02_datos_modelo/drive/model/coefficients.json",
+    "original_stage3/02_datos_modelo/drive/model/outputs_spec.json",
+    "original_stage3/02_datos_modelo/drive/model/model_spec.json",
+    "original_stage3/02_datos_modelo/drive/model/inputs.schema.json",
+    "original_stage3/02_datos_modelo/drive/base/base_ageclarity.xlsx",
+    "original_stage3/02_datos_modelo/drive/templates/report_template.json",
+    "original_stage3/02_datos_modelo/drive/docs/model_card.md",
+    "model/__pycache__/engine_reference.cpython-313.pyc",
+    "model/__pycache__/qa_engine.cpython-313.pyc",
+    "model/ingest/ingest.py"
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "decision": "App name = AgeClarity; slug = ageclarity.",
+      "reason": "Diferencia el producto del paquete científico BioAge y posiciona la propuesta alrededor de claridad/interpretación."
+    },
+    {
+      "id": "D02",
+      "decision": "GO 82/100.",
+      "reason": "Modelo/datos excepcionales y MVP rápido; monetización requiere valor más allá del número."
+    },
+    {
+      "id": "D03",
+      "decision": "No usar PhenoAge/edad como 'ritmo de envejecimiento'.",
+      "reason": "No es un pace-of-aging validado en la metodología de PhenoAge."
+    },
+    {
+      "id": "D04",
+      "decision": "El cálculo de PhenoAge es determinista; LLM solo puede redactar explicaciones.",
+      "reason": "Regla de fábrica y seguridad científica."
+    },
+    {
+      "id": "D05",
+      "decision": "Driver attribution por recomputación contrafactual; no aproximación lineal presentada como causal.",
+      "reason": "La transformación final es no lineal y una contribución aislada no implica causalidad."
+    },
+    {
+      "id": "D06",
+      "decision": "Número básico gratis; informe/seguimiento/partner layer monetizable.",
+      "reason": "HealthOS, AgeTrace, LabAge y otros commoditizan el cálculo."
+    },
+    {
+      "id": "D07",
+      "decision": "MVP sin OCR obligatorio y sin pagos en Fase 1.",
+      "reason": "Priorizar <90 s, precisión de unidades y señal de demanda antes de complejidad."
+    },
+    {
+      "id": "D08",
+      "decision": "Normalizar el handoff a GO usando brief.json como fuente del veredicto; conservar status original 'ready_for_agent_2'.",
+      "reason": "stage_completed=1 era válido y brief.json declara GO 82/100; el status del handoff era operativo, no un NO-GO."
+    },
+    {
+      "id": "D09",
+      "decision": "Fijar 0.090165 como constante canónica de Clinical PhenoAge; exponer 0.09165 solo como escenario de sensibilidad de versión.",
+      "reason": "La implementación BioAge actual restauró 0.090165 en 2026; la literatura/corrección histórica conserva la discrepancia y debe transparentarse."
+    },
+    {
+      "id": "D10",
+      "decision": "Explicar drivers con sensibilidad local one-at-a-time (+1% por biomarcador), sin atribución causal ni 'años causados'.",
+      "reason": "Evita inventar referencias saludables y respeta la no linealidad del motor."
+    },
+    {
+      "id": "D11",
+      "decision": "No entrenar un modelo ni depender de API cerrada/LLM para la cifra principal.",
+      "reason": "La fórmula publicada es reproducible, auditable, barata y suficiente para el MVP."
+    },
+    {
+      "id": "D12",
+      "decision": "No mostrar percentil ni comparativa nacional en v1.",
+      "reason": "No existe en este paquete una cohorte regional validada por país que permita una comparación defendible."
+    },
+    {
+      "id": "D13",
+      "decision": "Usar precios país como hipótesis PPP alrededor de ~21 dólares internacionales por informe y mantenerlos preliminares hasta validar WTP.",
+      "reason": "Permite una prueba comercial comparable sin presentar la disposición a pagar como dato observado."
+    },
+    {
+      "id": "D14",
+      "decision": "No imputar automáticamente CRP censurada o faltante de un informe del usuario.",
+      "reason": "La convención NHANES LLOD/sqrt(2) es una decisión de dataset poblacional y no debe sustituir el valor reportado por el laboratorio del usuario."
+    },
+    {
+      "id": "D4-08",
+      "decision": "Reparar lectura inlineStr y regenerar hashes del paquete de construcción; preservar originals.",
+      "reason": "QA 28/28 re-ejecutado con Excel; evitar falso READY sin checksum."
+    }
+  ],
+  "assumptions": [
+    "El usuario objetivo principal tiene 30–60 años, posee una analítica reciente y puede copiar 9 biomarcadores + edad en <2 minutos.",
+    "El precio pagado por informe se valida alrededor de US$8–15 equivalente; tabla por país es hipótesis, no precio final.",
+    "El usuario acepta que AgeClarity es una estimación poblacional educativa y no un diagnóstico.",
+    "La fórmula canónica usará 0.090165, sujeta a golden tests del Agente 2 contra BioAge R y fuentes primarias.",
+    "Para dimensionamiento B2C se usa 38% de población 30–59, 25% con analítica anual y 10–20% de alta intención: todos son supuestos explícitos.",
+    "La copia del informe al dueño en Fase 1 solo se implementa con consentimiento/base legal y minimización/pseudonimización.",
+    "El país seleccionado solo afecta copy, moneda/precio y futuros benchmarks; no modifica la fórmula científica v2.0.0.",
+    "Los precios PPP son hipótesis de lanzamiento y no evidencia de disposición a pagar.",
+    "La sensibilidad +1% es descriptiva del modelo alrededor del caso ingresado, no una recomendación clínica ni una inferencia causal.",
+    "La implementación v1 bloquea cálculo si falta cualquiera de los nueve biomarcadores o si CRP <= 0."
+  ],
+  "open_issues": [
+    "Revisión regulatoria país por país antes de mensajes clínicos, integración con laboratorios o claims médicos.",
+    "Revisión de privacidad/GDPR/LGPD/leyes locales para email, almacenamiento y owner-copy de Fase 1.",
+    "Validar disposición a pagar real; los precios PPP actuales son preliminares.",
+    "Medir validez externa y, si se desea percentil/comparativa nacional, incorporar cohortes regionales con licencia y validación adecuadas.",
+    "Screening legal de marca/dominio AgeClarity antes de registrar/comprar.",
+    "Cuantificar keyword volumes ES/PT directamente en una herramienta de planificación si se mantiene el canal SEO.",
+    "El MVP no está implementado: ejecutar M0-M5 y gates de lanzamiento."
+  ],
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-13",
+      "change": "Etapa 1 creada desde idea BioAge; naming AgeClarity; investigación de mercado, competencia, fórmula, MVP, monetización y riesgos."
+    },
+    {
+      "version": "2.0.0",
+      "date": "2026-10-13",
+      "change": "Etapa 2: modelo Clinical PhenoAge fijado y versionado, base Excel auditable, motor Python, 18 vectores, schemas de I/O, monetización PPP preliminar, model card, ingest opcional y paquete Drive con checksums."
+    },
+    {
+      "version": "4.0.0",
+      "date": "2026-10-13",
+      "change": "PRD completo, arquitectura, contratos API/SQL, planes de pruebas y tracción, BUILD handoff; etapa 3 preservada."
+    }
+  ],
+  "stage1_status_original": "ready_for_agent_2",
+  "updated_at": "2026-10-13T16:38:00-05:00",
+  "data_verification": {
+    "verified_rows": 63,
+    "total_rows_with_status": 69,
+    "verified_percent": 91.3,
+    "preliminary_rows": 6,
+    "note": "Las 6 filas preliminares son precios/hipótesis comerciales; parámetros científicos, conversiones, evidencia y casos de prueba están marcados verificado."
+  },
+  "model_summary": {
+    "primary": "Clinical PhenoAge determinista, implementación independiente con coeficientes publicados y constante final 0.090165, versionada contra BioAge R 2026.",
+    "backup": "Escenario de sensibilidad de versión con denominador 0.09165 para transparentar la discrepancia histórica; no reemplaza la cifra principal.",
+    "training_required": false,
+    "train_py": "No aplica: fórmula cerrada publicada, sin ajuste estadístico ni entrenamiento.",
+    "test_vectors": 18,
+    "valid_vectors": 15,
+    "expected_error_vectors": 3,
+    "excel_engine_example_abs_difference": 0
+  },
+  "stage1_open_issues_original": [
+    "Validar golden test vectors, CRP units/convention, log-space y rangos numéricos.",
+    "Definir referencia estadística de drivers y decidir entre contrafactual one-at-a-time vs Shapley.",
+    "Cuantificar keyword volumes ES/PT directamente en una herramienta de planificación; los rangos actuales son preliminares.",
+    "Revisión regulatoria país por país antes de mensajes clínicos o integración con laboratorio.",
+    "Revisión de privacidad/GDPR/LGPD/leyes locales para email, almacenamiento y owner-copy de Fase 1.",
+    "Screening legal de marca/dominio AgeClarity antes de registrar/comprar; la búsqueda web inicial no mostró un competidor directo obvio pero no es un clearance de marca.",
+    "Medir validez externa en cohortes no estadounidenses o definir el caveat final si no hay datos suficientes."
+  ],
+  "resolved_stage2": [
+    "Golden vectors, unidades, log natural y paridad Motor/engine: resueltos con 18 vectores y diferencia 0 en el caso de ejemplo.",
+    "Driver attribution: resuelto para v1 como sensibilidad local one-at-a-time +1%, no causal.",
+    "Constante de versión: fijada en 0.090165 con 0.09165 como sensibilidad histórica."
+  ],
+  "qa_summary": {
+    "original_vectors": 18,
+    "new_vectors": 10,
+    "passed": 28,
+    "tested": 28,
+    "critical_open": 0,
+    "major_resolved": 1,
+    "major_open": 2,
+    "limitations": "QA documental y matemática, no validación clínica/regulatoria; constantes y PPP sujetas a contraste raw/versionado"
+  },
+  "decisions_stage3": [
+    "Estabilizar fórmula con cálculo logarítmico algebraicamente equivalente",
+    "No presentar sensibilidad +1% como causalidad",
+    "No activar pago ni claims clínicos hasta validación legal y de datos"
+  ],
+  "entry_status": "PASS_WITH_FIXES",
+  "build_ready_not_production_ready": true,
+  "audit_summary": {
+    "json_parse_errors": [],
+    "drive_checks": [
+      {
+        "file": "base/base_ageclarity.xlsx",
+        "exists": true,
+        "checksum_match": true
+      },
+      {
+        "file": "docs/model_card.md",
+        "exists": true,
+        "checksum_match": true
+      },
+      {
+        "file": "model/coefficients.json",
+        "exists": true,
+        "checksum_match": true
+      },
+      {
+        "file": "model/engine_reference.py",
+        "exists": true,
+        "checksum_match": true
+      },
+      {
+        "file": "model/inputs.schema.json",
+        "exists": true,
+        "checksum_match": true
+      },
+      {
+        "file": "model/model_spec.json",
+        "exists": true,
+        "checksum_match": true
+      },
+      {
+        "file": "model/outputs_spec.json",
+        "exists": true,
+        "checksum_match": true
+      },
+      {
+        "file": "templates/report_template.json",
+        "exists": true,
+        "checksum_match": true
+      }
+    ],
+    "reference_vectors_passed": 28,
+    "reference_vectors_total": 28,
+    "xlsx_inline_string_parser_fixed": true,
+    "manifest_checksums_reconciled": 3
+  },
+  "implementation_verification": {
+    "date": "2026-10-13",
+    "install": "npm ci passed using /tmp/ageclarity-npm-cache; dependency integrity checks remained enabled",
+    "lint": "passed",
+    "typecheck": "passed",
+    "unit": "3 Vitest tests passed; all 28 model vectors covered (18 valid, 10 invalid)",
+    "e2e": "2 Playwright Chromium flows passed",
+    "drive_manifest": "8 of 8 SHA-256 checks passed",
+    "production_build": "passed; /es, /en, and /pt statically generated",
+    "http_smoke": "all 3 locale routes and health returned 200; preview API returned minimal fields and invalid input returned 422",
+    "responsive_smoke": "manual review at 390px and 1440px found no horizontal overflow",
+    "cloud_environment_draft": "saved, revision 2; requires review and publish",
+    "not_run": [
+      "Google Drive upload (no service account credentials supplied)",
+      "hosted CI",
+      "staging restore",
+      "production deployment",
+      "Lighthouse and full accessibility audit"
+    ]
+  }
+}

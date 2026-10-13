@@ -1,0 +1,1739 @@
+{
+  "version": "3.0.0",
+  "generated_by": "engine_reference.py executed against drive/base/base_ageclarity.xlsx",
+  "generated_at": "2026-10-13",
+  "notes": "Expected outputs are code-generated, never hand-entered. No published individual golden vector with all 10 inputs was found in the primary sources; parity is anchored to the current BioAge equation and unit-equivalence tests.; 10 new robustness vectors added in QA stage.",
+  "vectors": [
+    {
+      "id": "T01",
+      "country": "MX",
+      "description": "Caso típico SI",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 35.88704624531589,
+        "age_gap_years": -6.1129537546841135,
+        "alternate_0_09165_years": 37.5983236874949,
+        "alternate_delta_years": 1.7112774421790107,
+        "xb": -9.609628750166317,
+        "internal_mortality_component_120m": 0.013142222039743245
+      },
+      "normalized_inputs": {
+        "age_years": 42.0,
+        "albumin_gL": 43.0,
+        "creatinine_umolL": 80.0,
+        "glucose_mmolL": 5.2,
+        "crp_mg_dL": 0.1,
+        "lymphocyte_pct": 30.0,
+        "mcv_fL": 90.0,
+        "rdw_pct": 13.0,
+        "alp_UL": 70.0,
+        "wbc_10e3uL": 6.0
+      }
+    },
+    {
+      "id": "T02",
+      "country": "MX",
+      "description": "Equivalente T01 en unidades alternas",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 4.3,
+            "unit": "g/dL"
+          },
+          "creatinine": {
+            "value": 0.9049773755656108,
+            "unit": "mg/dL"
+          },
+          "glucose": {
+            "value": 93.6768149882904,
+            "unit": "mg/dL"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 1.0,
+            "unit": "mg/L"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^9/L"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 35.88704624531589,
+        "age_gap_years": -6.1129537546841135,
+        "alternate_0_09165_years": 37.5983236874949,
+        "alternate_delta_years": 1.7112774421790107,
+        "xb": -9.609628750166317,
+        "internal_mortality_component_120m": 0.013142222039743245
+      },
+      "normalized_inputs": {
+        "age_years": 42.0,
+        "albumin_gL": 43.0,
+        "creatinine_umolL": 80.0,
+        "glucose_mmolL": 5.2,
+        "crp_mg_dL": 0.1,
+        "lymphocyte_pct": 30.0,
+        "mcv_fL": 90.0,
+        "rdw_pct": 13.0,
+        "alp_UL": 70.0,
+        "wbc_10e3uL": 6.0
+      }
+    },
+    {
+      "id": "T03",
+      "country": "ES",
+      "description": "Adulto joven sintético",
+      "inputs": {
+        "age": 30,
+        "chemistry": {
+          "albumin": {
+            "value": 45,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 72,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 4.8,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 62,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.06,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 34,
+          "mcv": {
+            "value": 88,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 12.4,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 5.2,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "ES"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 18.213759892811396,
+        "age_gap_years": -11.786240107188604,
+        "alternate_0_09165_years": 20.211396639229022,
+        "alternate_delta_years": 1.9976367464176263,
+        "xb": -11.2031406141399,
+        "internal_mortality_component_120m": 0.002684734254411736
+      },
+      "normalized_inputs": {
+        "age_years": 30.0,
+        "albumin_gL": 45.0,
+        "creatinine_umolL": 72.0,
+        "glucose_mmolL": 4.8,
+        "crp_mg_dL": 0.06,
+        "lymphocyte_pct": 34.0,
+        "mcv_fL": 88.0,
+        "rdw_pct": 12.4,
+        "alp_UL": 62.0,
+        "wbc_10e3uL": 5.2
+      }
+    },
+    {
+      "id": "T04",
+      "country": "BR",
+      "description": "Adulto mayor sintético",
+      "inputs": {
+        "age": 68,
+        "chemistry": {
+          "albumin": {
+            "value": 41,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 96,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 6.1,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 95,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.22,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 25,
+          "mcv": {
+            "value": 94,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 14.1,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 7.4,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "BR"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 71.53845901001858,
+        "age_gap_years": 3.5384590100185846,
+        "alternate_0_09165_years": 72.6720785366975,
+        "alternate_delta_years": 1.1336195266789133,
+        "xb": -6.395119118236899,
+        "internal_mortality_component_120m": 0.2805676144673789
+      },
+      "normalized_inputs": {
+        "age_years": 68.0,
+        "albumin_gL": 41.0,
+        "creatinine_umolL": 96.0,
+        "glucose_mmolL": 6.1,
+        "crp_mg_dL": 0.22,
+        "lymphocyte_pct": 25.0,
+        "mcv_fL": 94.0,
+        "rdw_pct": 14.1,
+        "alp_UL": 95.0,
+        "wbc_10e3uL": 7.4
+      }
+    },
+    {
+      "id": "T05",
+      "country": "CO",
+      "description": "Borde edad mínimo 20",
+      "inputs": {
+        "age": 20,
+        "chemistry": {
+          "albumin": {
+            "value": 44,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 70,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 4.9,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 65,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.08,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 32,
+          "mcv": {
+            "value": 89,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 12.7,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 5.8,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "CO"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 12.078580860663521,
+        "age_gap_years": -7.921419139336479,
+        "alternate_0_09165_years": 14.175625581579112,
+        "alternate_delta_years": 2.0970447209155907,
+        "xb": -11.756319031573502,
+        "internal_mortality_component_120m": 0.001544923266335041
+      },
+      "normalized_inputs": {
+        "age_years": 20.0,
+        "albumin_gL": 44.0,
+        "creatinine_umolL": 70.0,
+        "glucose_mmolL": 4.9,
+        "crp_mg_dL": 0.08,
+        "lymphocyte_pct": 32.0,
+        "mcv_fL": 89.0,
+        "rdw_pct": 12.7,
+        "alp_UL": 65.0,
+        "wbc_10e3uL": 5.8
+      }
+    },
+    {
+      "id": "T06",
+      "country": "PE",
+      "description": "Borde edad máximo 84",
+      "inputs": {
+        "age": 84,
+        "chemistry": {
+          "albumin": {
+            "value": 39,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 110,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 6.5,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 110,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.3,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 22,
+          "mcv": {
+            "value": 96,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 14.6,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 8.0,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "PE"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 92.7192142625402,
+        "age_gap_years": 8.719214262540206,
+        "alternate_0_09165_years": 93.50964315583128,
+        "alternate_delta_years": 0.7904288932910788,
+        "xb": -4.485356320893287,
+        "internal_mortality_component_120m": 0.8917395780502639
+      },
+      "normalized_inputs": {
+        "age_years": 84.0,
+        "albumin_gL": 39.0,
+        "creatinine_umolL": 110.0,
+        "glucose_mmolL": 6.5,
+        "crp_mg_dL": 0.3,
+        "lymphocyte_pct": 22.0,
+        "mcv_fL": 96.0,
+        "rdw_pct": 14.6,
+        "alp_UL": 110.0,
+        "wbc_10e3uL": 8.0
+      }
+    },
+    {
+      "id": "T07",
+      "country": "AR",
+      "description": "CRP cercana al LLOD NHANES 0.15 mg/L",
+      "inputs": {
+        "age": 50,
+        "chemistry": {
+          "albumin": {
+            "value": 42,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 85,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.4,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 75,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.15,
+            "unit": "mg/L"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 29,
+          "mcv": {
+            "value": 91,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13.2,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6.3,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "AR"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 43.79424510503968,
+        "age_gap_years": -6.205754894960322,
+        "alternate_0_09165_years": 45.37740263116096,
+        "alternate_delta_years": 1.5831575261212834,
+        "xb": -8.896676164979322,
+        "internal_mortality_component_120m": 0.026627018872282138
+      },
+      "normalized_inputs": {
+        "age_years": 50.0,
+        "albumin_gL": 42.0,
+        "creatinine_umolL": 85.0,
+        "glucose_mmolL": 5.4,
+        "crp_mg_dL": 0.015,
+        "lymphocyte_pct": 29.0,
+        "mcv_fL": 91.0,
+        "rdw_pct": 13.2,
+        "alp_UL": 75.0,
+        "wbc_10e3uL": 6.3
+      }
+    },
+    {
+      "id": "T08",
+      "country": "ES",
+      "description": "CRP 3 mg/L vía conversión",
+      "inputs": {
+        "age": 55,
+        "chemistry": {
+          "albumin": {
+            "value": 40,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 90,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.6,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 80,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 3.0,
+            "unit": "mg/L"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 27,
+          "mcv": {
+            "value": 92,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13.5,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6.8,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "ES"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 55.19835248690664,
+        "age_gap_years": 0.19835248690664287,
+        "alternate_0_09165_years": 56.596729877053335,
+        "alternate_delta_years": 1.3983773901466918,
+        "xb": -7.868424822893287,
+        "internal_mortality_component_120m": 0.07268588540462673
+      },
+      "normalized_inputs": {
+        "age_years": 55.0,
+        "albumin_gL": 40.0,
+        "creatinine_umolL": 90.0,
+        "glucose_mmolL": 5.6,
+        "crp_mg_dL": 0.30000000000000004,
+        "lymphocyte_pct": 27.0,
+        "mcv_fL": 92.0,
+        "rdw_pct": 13.5,
+        "alp_UL": 80.0,
+        "wbc_10e3uL": 6.8
+      }
+    },
+    {
+      "id": "T09",
+      "country": "MX",
+      "description": "Creatinina en mg/dL",
+      "inputs": {
+        "age": 45,
+        "chemistry": {
+          "albumin": {
+            "value": 42,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 1.1,
+            "unit": "mg/dL"
+          },
+          "glucose": {
+            "value": 5.0,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 72,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.12,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 31,
+          "mcv": {
+            "value": 89,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13.0,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6.1,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 40.183458154439535,
+        "age_gap_years": -4.816541845560465,
+        "alternate_0_09165_years": 41.82512106650344,
+        "alternate_delta_years": 1.6416629120639072,
+        "xb": -9.222242770380186,
+        "internal_mortality_component_120m": 0.019299806103258987
+      },
+      "normalized_inputs": {
+        "age_years": 45.0,
+        "albumin_gL": 42.0,
+        "creatinine_umolL": 97.24000000000001,
+        "glucose_mmolL": 5.0,
+        "crp_mg_dL": 0.12,
+        "lymphocyte_pct": 31.0,
+        "mcv_fL": 89.0,
+        "rdw_pct": 13.0,
+        "alp_UL": 72.0,
+        "wbc_10e3uL": 6.1
+      }
+    },
+    {
+      "id": "T10",
+      "country": "BR",
+      "description": "Glucosa en mg/dL",
+      "inputs": {
+        "age": 47,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 82,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 100,
+            "unit": "mg/dL"
+          },
+          "alp": {
+            "value": 68,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 12.9,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 5.9,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "BR"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 40.84458297464546,
+        "age_gap_years": -6.155417025354538,
+        "alternate_0_09165_years": 42.4755337169548,
+        "alternate_delta_years": 1.630950742309338,
+        "xb": -9.162632450966317,
+        "internal_mortality_component_120m": 0.020473039077070876
+      },
+      "normalized_inputs": {
+        "age_years": 47.0,
+        "albumin_gL": 43.0,
+        "creatinine_umolL": 82.0,
+        "glucose_mmolL": 5.550999999999999,
+        "crp_mg_dL": 0.1,
+        "lymphocyte_pct": 30.0,
+        "mcv_fL": 90.0,
+        "rdw_pct": 12.9,
+        "alp_UL": 68.0,
+        "wbc_10e3uL": 5.9
+      }
+    },
+    {
+      "id": "T11",
+      "country": "CO",
+      "description": "Albúmina en g/dL",
+      "inputs": {
+        "age": 52,
+        "chemistry": {
+          "albumin": {
+            "value": 4.1,
+            "unit": "g/dL"
+          },
+          "creatinine": {
+            "value": 88,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.3,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 78,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.14,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 28,
+          "mcv": {
+            "value": 91,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13.3,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6.5,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "CO"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 49.09622639728879,
+        "age_gap_years": -2.9037736027112118,
+        "alternate_0_09165_years": 50.59347620689083,
+        "alternate_delta_years": 1.4972498096020388,
+        "xb": -8.418623021763679,
+        "internal_mortality_component_120m": 0.04259587076156557
+      },
+      "normalized_inputs": {
+        "age_years": 52.0,
+        "albumin_gL": 41.0,
+        "creatinine_umolL": 88.0,
+        "glucose_mmolL": 5.3,
+        "crp_mg_dL": 0.14,
+        "lymphocyte_pct": 28.0,
+        "mcv_fL": 91.0,
+        "rdw_pct": 13.3,
+        "alp_UL": 78.0,
+        "wbc_10e3uL": 6.5
+      }
+    },
+    {
+      "id": "T12",
+      "country": "PE",
+      "description": "WBC en 10^9/L",
+      "inputs": {
+        "age": 39,
+        "chemistry": {
+          "albumin": {
+            "value": 44,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 76,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 4.7,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 60,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.07,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 35,
+          "mcv": {
+            "value": 87,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 12.5,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 5.0,
+            "unit": "10^9/L"
+          }
+        },
+        "country": "PE"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 26.747514226050512,
+        "age_gap_years": -12.252485773949488,
+        "alternate_0_09165_years": 28.606879011913193,
+        "alternate_delta_years": 1.859364785862681,
+        "xb": -10.43369465468339,
+        "internal_mortality_component_120m": 0.005786175238008284
+      },
+      "normalized_inputs": {
+        "age_years": 39.0,
+        "albumin_gL": 44.0,
+        "creatinine_umolL": 76.0,
+        "glucose_mmolL": 4.7,
+        "crp_mg_dL": 0.07,
+        "lymphocyte_pct": 35.0,
+        "mcv_fL": 87.0,
+        "rdw_pct": 12.5,
+        "alp_UL": 60.0,
+        "wbc_10e3uL": 5.0
+      }
+    },
+    {
+      "id": "T13",
+      "country": "AR",
+      "description": "Todas las unidades alternativas compatibles",
+      "inputs": {
+        "age": 60,
+        "chemistry": {
+          "albumin": {
+            "value": 4.0,
+            "unit": "g/dL"
+          },
+          "creatinine": {
+            "value": 1.2,
+            "unit": "mg/dL"
+          },
+          "glucose": {
+            "value": 110,
+            "unit": "mg/dL"
+          },
+          "alp": {
+            "value": 100,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 2.5,
+            "unit": "mg/L"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 24,
+          "mcv": {
+            "value": 95,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 14.0,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 7.2,
+            "unit": "10^9/L"
+          }
+        },
+        "country": "AR"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 66.03670643193925,
+        "age_gap_years": 6.036706431939251,
+        "alternate_0_09165_years": 67.25947055849211,
+        "alternate_delta_years": 1.2227641265528604,
+        "xb": -6.891184639439421,
+        "internal_mortality_component_120m": 0.18168956029816563
+      },
+      "normalized_inputs": {
+        "age_years": 60.0,
+        "albumin_gL": 40.0,
+        "creatinine_umolL": 106.08,
+        "glucose_mmolL": 6.1061,
+        "crp_mg_dL": 0.25,
+        "lymphocyte_pct": 24.0,
+        "mcv_fL": 95.0,
+        "rdw_pct": 14.0,
+        "alp_UL": 100.0,
+        "wbc_10e3uL": 7.2
+      }
+    },
+    {
+      "id": "T14",
+      "country": "MX",
+      "description": "Perfil sintético de valores relativamente altos",
+      "inputs": {
+        "age": 60,
+        "chemistry": {
+          "albumin": {
+            "value": 35,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 150,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 9.0,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 180,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 1.0,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 18,
+          "mcv": {
+            "value": 100,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 16.0,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 12.0,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 94.4903489699465,
+        "age_gap_years": 34.490348969946496,
+        "alternate_0_09165_years": 95.25208026323214,
+        "alternate_delta_years": 0.7617312932856493,
+        "xb": -4.325661959999998,
+        "internal_mortality_component_120m": 0.9263307973383614
+      },
+      "normalized_inputs": {
+        "age_years": 60.0,
+        "albumin_gL": 35.0,
+        "creatinine_umolL": 150.0,
+        "glucose_mmolL": 9.0,
+        "crp_mg_dL": 1.0,
+        "lymphocyte_pct": 18.0,
+        "mcv_fL": 100.0,
+        "rdw_pct": 16.0,
+        "alp_UL": 180.0,
+        "wbc_10e3uL": 12.0
+      }
+    },
+    {
+      "id": "T15",
+      "country": "ES",
+      "description": "Perfil sintético de valores relativamente bajos",
+      "inputs": {
+        "age": 35,
+        "chemistry": {
+          "albumin": {
+            "value": 50,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 50,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 3.5,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 35,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.02,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 45,
+          "mcv": {
+            "value": 78,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 11.5,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 3.5,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "ES"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 5.172113585784672,
+        "age_gap_years": -29.827886414215328,
+        "alternate_0_09165_years": 7.381063422938098,
+        "alternate_delta_years": 2.208949837153426,
+        "xb": -12.379040653412925,
+        "internal_mortality_component_120m": 0.0008291210435432683
+      },
+      "normalized_inputs": {
+        "age_years": 35.0,
+        "albumin_gL": 50.0,
+        "creatinine_umolL": 50.0,
+        "glucose_mmolL": 3.5,
+        "crp_mg_dL": 0.02,
+        "lymphocyte_pct": 45.0,
+        "mcv_fL": 78.0,
+        "rdw_pct": 11.5,
+        "alp_UL": 35.0,
+        "wbc_10e3uL": 3.5
+      }
+    },
+    {
+      "id": "T16",
+      "country": "BR",
+      "description": "Inválido: CRP = 0",
+      "inputs": {
+        "age": 44,
+        "chemistry": {
+          "albumin": {
+            "value": 42,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "BR"
+      },
+      "expected_status": "error",
+      "expected_error": "ValueError: crp must be finite and > 0"
+    },
+    {
+      "id": "T17",
+      "country": "CO",
+      "description": "Inválido: edad 19",
+      "inputs": {
+        "age": 19,
+        "chemistry": {
+          "albumin": {
+            "value": 42,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "CO"
+      },
+      "expected_status": "error",
+      "expected_error": "ValueError: age must be between 20 and 84 years"
+    },
+    {
+      "id": "T18",
+      "country": "PE",
+      "description": "Inválido: RDW faltante",
+      "inputs": {
+        "age": 48,
+        "chemistry": {
+          "albumin": {
+            "value": 42,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 85,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.4,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 75,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.12,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "wbc": {
+            "value": 6.3,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "PE"
+      },
+      "expected_status": "error",
+      "expected_error": "KeyError: 'rdw'"
+    },
+    {
+      "id": "T19",
+      "country": "MX",
+      "description": "NaN glucose",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": "NaN",
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "error"
+    },
+    {
+      "id": "T20",
+      "country": "MX",
+      "description": "Infinite CRP",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": "Infinity",
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "error"
+    },
+    {
+      "id": "T21",
+      "country": "MX",
+      "description": "CRP zero",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "error"
+    },
+    {
+      "id": "T22",
+      "country": "MX",
+      "description": "Edad 19",
+      "inputs": {
+        "age": 19,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "error"
+    },
+    {
+      "id": "T23",
+      "country": "MX",
+      "description": "Edad 85",
+      "inputs": {
+        "age": 85,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "error"
+    },
+    {
+      "id": "T24",
+      "country": "MX",
+      "description": "Unidad inválida",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "oz"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "error"
+    },
+    {
+      "id": "T25",
+      "country": "MX",
+      "description": "Linfocitos >100",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 101,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "error"
+    },
+    {
+      "id": "T26",
+      "country": "MX",
+      "description": "Creatinina extrema",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 10000,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 0.1,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 1081.7961098509281,
+        "age_gap_years": 1039.7961098509281,
+        "alternate_0_09165_years": 1066.5605792248657,
+        "alternate_delta_years": -15.235530626062427,
+        "xb": 84.6947619698337,
+        "internal_mortality_component_120m": 1.0
+      },
+      "normalized_inputs": {
+        "age_years": 42.0,
+        "albumin_gL": 43.0,
+        "creatinine_umolL": 10000.0,
+        "glucose_mmolL": 5.2,
+        "alp_UL": 70.0,
+        "crp_mg_dL": 0.1,
+        "lymphocyte_pct": 30.0,
+        "mcv_fL": 90.0,
+        "rdw_pct": 13.0,
+        "wbc_10e3uL": 6.0
+      }
+    },
+    {
+      "id": "T27",
+      "country": "MX",
+      "description": "PCR muy pequeña",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 1e-100,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": -205.2221863445556,
+        "age_gap_years": -247.2221863445556,
+        "alternate_0_09165_years": -199.60422902898915,
+        "alternate_delta_years": 5.617957315566457,
+        "xb": -31.349242706632076,
+        "internal_mortality_component_120m": 4.787887851249895e-12
+      },
+      "normalized_inputs": {
+        "age_years": 42.0,
+        "albumin_gL": 43.0,
+        "creatinine_umolL": 80.0,
+        "glucose_mmolL": 5.2,
+        "alp_UL": 70.0,
+        "crp_mg_dL": 1e-100,
+        "lymphocyte_pct": 30.0,
+        "mcv_fL": 90.0,
+        "rdw_pct": 13.0,
+        "wbc_10e3uL": 6.0
+      }
+    },
+    {
+      "id": "T28",
+      "country": "MX",
+      "description": "PCR muy alta",
+      "inputs": {
+        "age": 42,
+        "chemistry": {
+          "albumin": {
+            "value": 43,
+            "unit": "g/L"
+          },
+          "creatinine": {
+            "value": 80,
+            "unit": "umol/L"
+          },
+          "glucose": {
+            "value": 5.2,
+            "unit": "mmol/L"
+          },
+          "alp": {
+            "value": 70,
+            "unit": "U/L"
+          }
+        },
+        "inflammation": {
+          "crp": {
+            "value": 1e+100,
+            "unit": "mg/dL"
+          }
+        },
+        "cbc": {
+          "lymphocyte_pct": 30,
+          "mcv": {
+            "value": 90,
+            "unit": "fL"
+          },
+          "rdw": {
+            "value": 13,
+            "unit": "%"
+          },
+          "wbc": {
+            "value": 6,
+            "unit": "10^3/uL"
+          }
+        },
+        "country": "MX"
+      },
+      "expected_status": "ok",
+      "expected_outputs": {
+        "phenoage_years": 281.86717242286153,
+        "age_gap_years": 239.86717242286153,
+        "alternate_0_09165_years": 279.5928471659281,
+        "alternate_delta_years": -2.274325256933423,
+        "xb": 12.569169326632084,
+        "internal_mortality_component_120m": 1.0
+      },
+      "normalized_inputs": {
+        "age_years": 42.0,
+        "albumin_gL": 43.0,
+        "creatinine_umolL": 80.0,
+        "glucose_mmolL": 5.2,
+        "alp_UL": 70.0,
+        "crp_mg_dL": 1e+100,
+        "lymphocyte_pct": 30.0,
+        "mcv_fL": 90.0,
+        "rdw_pct": 13.0,
+        "wbc_10e3uL": 6.0
+      }
+    }
+  ]
+}

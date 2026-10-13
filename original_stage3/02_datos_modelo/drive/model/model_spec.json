@@ -1,0 +1,236 @@
+{
+  "app": "AgeClarity",
+  "model_id": "clinical_phenoage_levine_bioage_2026",
+  "version": "3.0.0",
+  "objective": "Calcular Clinical Phenotypic Age (PhenoAge) en años y la brecha respecto a edad cronológica a partir de edad + 9 biomarcadores rutinarios.",
+  "intended_use": "Información y wellness. No diagnóstico, tratamiento, prescripción ni predicción individual de esperanza de vida.",
+  "primary_model": "Clinical PhenoAge determinista, coeficientes originales con precisión de BioAge actual y constante 0.090165.",
+  "backup_model": "Misma ecuación con denominador 0.09165 solo como escenario de sensibilidad histórica; no se usa para la cifra principal.",
+  "equations": {
+    "xb": "-19.90667 -0.03359355*albumin_gL +0.009506491*creatinine_umolL +0.1953192*glucose_mmolL +0.09536762*ln(crp_mg_dL) -0.01199984*lymphocyte_pct +0.02676401*mcv_fL +0.3306156*rdw_pct +0.001868778*alp_UL +0.05542406*wbc_10e3uL +0.08035356*age_years",
+    "M": "1 - exp((-1.51714 * exp(xb)) / 0.007692696)",
+    "phenoage": "ln(-0.0055305 * ln(1-M)) / 0.090165 + 141.50225",
+    "age_gap": "phenoage - age_years",
+    "alternate_denominator_scenario": "ln(-0.0055305 * ln(1-M)) / 0.09165 + 141.50225"
+  },
+  "pseudocode": [
+    "normalizar unidades a g/L, µmol/L, mmol/L, mg/dL, %, fL, U/L y 10^3/µL",
+    "rechazar edad fuera de 20–84 y CRP <= 0; no imputar biomarcadores faltantes",
+    "xb = intercepto + suma(beta_i * x_i), usando ln(CRP_mg_dL)",
+    "M = 1 - exp((-1.51714*exp(xb))/0.007692696)",
+    "PhenoAge = ln(-0.0055305*ln(1-M))/0.090165 + 141.50225",
+    "gap = PhenoAge - edad",
+    "calcular sensibilidad local: delta de PhenoAge al aumentar cada biomarcador 1%, uno a la vez",
+    "calcular escenario alternativo 0.09165 únicamente para auditoría de versión",
+    "Evaluar la transformación PhenoAge algebraicamente en espacio logarítmico: (ln(-scale*gompertz_num/gompertz_den)+xb)/den + intercept; evita cancelación numérica al formar M."
+  ],
+  "variables": [
+    {
+      "name": "age_years",
+      "unit": "años",
+      "required": true,
+      "range": [
+        20,
+        84
+      ],
+      "source": "S208"
+    },
+    {
+      "name": "albumin_gL",
+      "unit": "g/L",
+      "required": true,
+      "range_note": "sin rango clínico bloqueante; >0",
+      "source": "S206"
+    },
+    {
+      "name": "creatinine_umolL",
+      "unit": "µmol/L",
+      "required": true,
+      "range_note": "sin rango clínico bloqueante; >0",
+      "source": "S206"
+    },
+    {
+      "name": "glucose_mmolL",
+      "unit": "mmol/L",
+      "required": true,
+      "range_note": "sin rango clínico bloqueante; >0",
+      "source": "S206"
+    },
+    {
+      "name": "crp_mg_dL",
+      "unit": "mg/dL",
+      "required": true,
+      "range_note": ">0; si viene censurada '<x', no imputar automáticamente",
+      "source": "S209"
+    },
+    {
+      "name": "lymphocyte_pct",
+      "unit": "%",
+      "required": true,
+      "range": [
+        0,
+        100
+      ],
+      "source": "definición porcentual"
+    },
+    {
+      "name": "mcv_fL",
+      "unit": "fL",
+      "required": true,
+      "range_note": ">0",
+      "source": "S208"
+    },
+    {
+      "name": "rdw_pct",
+      "unit": "%",
+      "required": true,
+      "range_note": ">0",
+      "source": "S208"
+    },
+    {
+      "name": "alp_UL",
+      "unit": "U/L",
+      "required": true,
+      "range_note": ">0",
+      "source": "S208"
+    },
+    {
+      "name": "wbc_10e3uL",
+      "unit": "10^3/µL",
+      "required": true,
+      "range_note": ">0; numéricamente equivale a 10^9/L",
+      "source": "S208"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "intercept",
+      "value": -19.90667,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_albumin",
+      "value": -0.03359355,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_creatinine",
+      "value": 0.009506491,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_glucose",
+      "value": 0.1953192,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_ln_crp",
+      "value": 0.09536762,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_lymphocyte",
+      "value": -0.01199984,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_mcv",
+      "value": 0.02676401,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_rdw",
+      "value": 0.3306156,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_alp",
+      "value": 0.001868778,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_wbc",
+      "value": 0.05542406,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "beta_age",
+      "value": 0.08035356,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "gompertz_num",
+      "value": -1.51714,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "gompertz_den",
+      "value": 0.007692696,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "age_transform_scale",
+      "value": -0.0055305,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "age_transform_den",
+      "value": 0.090165,
+      "source": "S203/S204",
+      "status": "verificado"
+    },
+    {
+      "name": "age_transform_intercept",
+      "value": 141.50225,
+      "source": "S203",
+      "status": "verificado"
+    },
+    {
+      "name": "historical_alt_den",
+      "value": 0.09165,
+      "source": "S202",
+      "status": "verificado"
+    }
+  ],
+  "assumptions": [
+    "La cifra principal replica la implementación original de BioAge actualizada en 2026 y no reentrena el modelo.",
+    "La edad de validez operacional se restringe a 20–84 años, rango de adultos evaluado en NHANES IV publicado.",
+    "No se interpreta el age gap como ritmo de envejecimiento ni como causalidad.",
+    "M es un componente interno del modelo de riesgo a 120 meses; no se presenta al usuario como pronóstico clínico individual.",
+    "No se imputan valores censurados de CRP ni biomarcadores faltantes."
+  ],
+  "uncertainty": {
+    "type": "escenarios_de_modelo_y_sensibilidad",
+    "statistical_ci": "No disponible para predicción individual en la publicación; no se inventa un intervalo de confianza.",
+    "version_scenario": "Se calcula en paralelo el resultado con 0.09165 para mostrar la sensibilidad a la discrepancia histórica de la ecuación.",
+    "local_sensitivity": "Cambio en PhenoAge ante +1% en cada biomarcador, uno a la vez. Es sensibilidad matemática, no causalidad ni error analítico."
+  },
+  "validity": {
+    "population": "Adultos; desarrollo/validación original en NHANES de EE.UU.",
+    "age_years": [
+      20,
+      84
+    ],
+    "geography": "No se asume calibración regional fuera de EE.UU.; app ES/EN/PT-BR debe mostrar este límite.",
+    "missing_data": "No permitido para los 9 biomarcadores ni edad.",
+    "crp": "Debe ser >0 en mg/dL tras conversión."
+  },
+  "evidence": {
+    "validation": "NHANES IV: HR all-cause ~1.09 por año de Phenotypic Age; asociaciones robustas en subgrupos, según Liu et al. 2018.",
+    "formula_resolution": "0.090165 seleccionado por paridad con BioAge actual y actividad del mantenedor en abril de 2026; 0.09165 conservado como escenario auditable."
+  }
+}

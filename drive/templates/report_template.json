@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "languages": [
+    "es",
+    "en",
+    "pt-BR"
+  ],
+  "sections": [
+    {
+      "id": "summary",
+      "free": true,
+      "content": [
+        "phenoage",
+        "age_gap",
+        "gap_chart",
+        "free_insight"
+      ]
+    },
+    {
+      "id": "data_quality",
+      "free": false,
+      "content": [
+        "normalized_units",
+        "input_flags",
+        "missingness"
+      ]
+    },
+    {
+      "id": "sensitivity",
+      "free": false,
+      "content": [
+        "local_sensitivity",
+        "+1% counterfactual",
+        "non_causal_label"
+      ]
+    },
+    {
+      "id": "scenario",
+      "free": false,
+      "content": [
+        "canonical_0.090165",
+        "historical_0.09165",
+        "delta"
+      ]
+    },
+    {
+      "id": "questions",
+      "free": false,
+      "content": [
+        "questions_for_professional"
+      ]
+    },
+    {
+      "id": "method",
+      "free": false,
+      "content": [
+        "model_card_excerpt",
+        "sources",
+        "version"
+      ]
+    },
+    {
+      "id": "limits",
+      "free": false,
+      "content": [
+        "not_diagnostic",
+        "US_origin",
+        "age_range",
+        "no_percentiles_v1"
+      ]
+    }
+  ]
+}

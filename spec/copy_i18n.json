@@ -1,0 +1,44 @@
+{
+  "es": {
+    "name": "AgeClarity",
+    "tagline": "Comprende tu edad fenotípica, sin exageraciones.",
+    "start": "Calcular mi PhenoAge",
+    "age": "¿Cuántos años tienes?",
+    "next": "Continuar",
+    "calculate": "Ver mi resultado",
+    "result": "Tu PhenoAge estimado",
+    "disclaimer": "Herramienta educativa; no proporciona diagnósticos ni pronósticos individuales.",
+    "email": "Solicita novedades del informe",
+    "no_data": "Completa tus resultados de laboratorio antes de calcular.",
+    "invalid": "Revisa el valor y la unidad indicada.",
+    "success": "Solicitud registrada en esta demostración; no se enviaron correos."
+  },
+  "en": {
+    "name": "AgeClarity",
+    "tagline": "Understand your phenotypic age, without hype.",
+    "start": "Calculate my PhenoAge",
+    "age": "How old are you?",
+    "next": "Continue",
+    "calculate": "View my result",
+    "result": "Your estimated PhenoAge",
+    "disclaimer": "Educational tool; not a diagnosis or individual prognosis.",
+    "email": "Get report updates",
+    "no_data": "Enter your lab results before calculating.",
+    "invalid": "Check the value and selected unit.",
+    "success": "Demo request recorded locally; no email was sent."
+  },
+  "pt": {
+    "name": "AgeClarity",
+    "tagline": "Entenda sua idade fenotípica, sem exageros.",
+    "start": "Calcular meu PhenoAge",
+    "age": "Quantos anos você tem?",
+    "next": "Continuar",
+    "calculate": "Ver meu resultado",
+    "result": "Seu PhenoAge estimado",
+    "disclaimer": "Ferramenta educacional; não fornece diagnóstico nem prognóstico individual.",
+    "email": "Receber novidades do relatório",
+    "no_data": "Informe os exames antes de calcular.",
+    "invalid": "Confira o valor e a unidade escolhida.",
+    "success": "Solicitação de demonstração registrada localmente; nenhum e-mail foi enviado."
+  }
+}

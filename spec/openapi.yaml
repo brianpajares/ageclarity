@@ -1,0 +1,148 @@
+openapi: 3.1.0
+info:
+  title: AgeClarity API
+  version: 4.0.0
+  description: Motor informativo, no diagnóstico. Prohibido registrar payload clínico.
+servers:
+  - url: / 
+paths:
+  /api/v1/health:
+    get:
+      operationId: health
+      responses:
+        '200': {description: Estado servicio y snapshot activo}
+  /api/v1/calculate:
+    post:
+      operationId: calculate
+      description: Cálculo sin persistir datos ni loguear el cuerpo.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/CalculateRequest'}
+      responses:
+        '200':
+          description: Preview y token efímero firmado para solicitar informe
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/PreviewResponse'}
+        '422': {description: Campo/unidad inválida}
+        '429': {description: Límite de solicitudes}
+  /api/v1/leads:
+    post:
+      operationId: createLead
+      description: Opt-in explícito y verificación Turnstile. No almacenar datos clínicos sin consentimiento específico.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/CreateLeadRequest'}
+      responses:
+        '201':
+          description: Solicitud creada
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/LeadReceipt'}
+        '422': {description: Consentimiento/datos incorrectos}
+  /api/v1/leads/{id}:
+    get:
+      operationId: getLead
+      security: [{AdminSession: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LeadId'}
+      responses:
+        '200': {description: Lead minimizado para administrador autorizado}
+        '401': {description: No autenticado}
+        '403': {description: Sin permisos}
+  /api/v1/leads/{id}/resend:
+    post:
+      operationId: resendLead
+      security: [{AdminSession: []}]
+      parameters:
+        - {$ref: '#/components/parameters/LeadId'}
+      responses:
+        '202': {description: Reenvío encolado idempotentemente}
+        '403': {description: Sin permisos}
+  /api/v1/stripe/webhook:
+    post:
+      operationId: stripeWebhook
+      description: Solo cuando MONETIZATION_MODE=stripe; verificar firma e idempotencia.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {type: object, additionalProperties: true}
+      responses:
+        '200': {description: Evento aceptado o duplicado}
+        '404': {description: Stripe deshabilitado}
+components:
+  securitySchemes:
+    AdminSession: {type: http, scheme: bearer, bearerFormat: Supabase JWT}
+  parameters:
+    LeadId:
+      name: id
+      in: path
+      required: true
+      schema: {type: string, format: uuid}
+  schemas:
+    Measurement:
+      type: object
+      additionalProperties: false
+      required: [value, unit]
+      properties:
+        value: {type: number}
+        unit: {type: string}
+    CalculateRequest:
+      type: object
+      additionalProperties: false
+      required: [age, chemistry, inflammation, cbc]
+      properties:
+        age: {type: number, minimum: 20, maximum: 84}
+        chemistry:
+          type: object
+          required: [albumin, creatinine, glucose, alp]
+          properties:
+            albumin: {$ref: '#/components/schemas/Measurement'}
+            creatinine: {$ref: '#/components/schemas/Measurement'}
+            glucose: {$ref: '#/components/schemas/Measurement'}
+            alp: {$ref: '#/components/schemas/Measurement'}
+        inflammation:
+          type: object
+          required: [crp]
+          properties:
+            crp: {$ref: '#/components/schemas/Measurement'}
+        cbc:
+          type: object
+          required: [lymphocyte_pct, mcv, rdw, wbc]
+          properties:
+            lymphocyte_pct: {type: number, minimum: 0, maximum: 100}
+            mcv: {$ref: '#/components/schemas/Measurement'}
+            rdw: {$ref: '#/components/schemas/Measurement'}
+            wbc: {$ref: '#/components/schemas/Measurement'}
+    PreviewResponse:
+      type: object
+      required: [phenoage_years, age_gap_years, model_version, request_token]
+      properties:
+        phenoage_years: {type: number}
+        age_gap_years: {type: number}
+        model_version: {type: string}
+        request_token: {type: string, description: Token efímero firmado de preview sin datos clínicos legibles}
+        disclaimer: {type: string}
+    CreateLeadRequest:
+      type: object
+      required: [email, request_token, consent_privacy, consent_health_data, turnstile_token, locale]
+      properties:
+        email: {type: string, format: email}
+        request_token: {type: string}
+        consent_privacy: {const: true}
+        consent_health_data: {const: true}
+        consent_marketing: {type: boolean, default: false}
+        turnstile_token: {type: string}
+        locale: {type: string, enum: [es, en, pt]}
+    LeadReceipt:
+      type: object
+      required: [id, status]
+      properties:
+        id: {type: string, format: uuid}
+        status: {type: string, enum: [received]}

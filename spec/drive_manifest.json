@@ -1,0 +1,80 @@
+{
+  "app_slug": "ageclarity",
+  "version": "4.0.0",
+  "generated_at": "2026-10-13T16:38:00-05:00",
+  "drive_root": "/Apps/ageclarity/",
+  "files": [
+    {
+      "file": "base_ageclarity.xlsx",
+      "drive_path": "/Apps/ageclarity/base/base_ageclarity.xlsx",
+      "purpose": "Base de conocimiento, parámetros, conversiones, precios, evidencia, motor y casos de prueba.",
+      "format": "XLSX",
+      "reader": "app",
+      "sha256": "acc4f7042457a07f878001b0aa51775caed03642f12be3fdf4addd03f0727331",
+      "version": "2.0.0"
+    },
+    {
+      "file": "model_card.md",
+      "drive_path": "/Apps/ageclarity/docs/model_card.md",
+      "purpose": "Página pública Cómo funciona: metodología, fiabilidad, límites y disclaimer.",
+      "format": "MD",
+      "reader": "app",
+      "sha256": "cc674be5acd0a4ae9fb93dc5a3328f0786c8619d2803a2425132cc8b64f92f5f",
+      "version": "2.0.0"
+    },
+    {
+      "file": "coefficients.json",
+      "drive_path": "/Apps/ageclarity/model/coefficients.json",
+      "purpose": "Coeficientes canónicos y constantes versionadas del motor Clinical PhenoAge.",
+      "format": "JSON",
+      "reader": "app",
+      "sha256": "942822214ac97ac98272823d9cbc4ff12c72c905f95102814f5bfa699f2a3e33",
+      "version": "2.0.0"
+    },
+    {
+      "file": "engine_reference.py",
+      "drive_path": "/Apps/ageclarity/model/engine_reference.py",
+      "purpose": "Implementación de referencia para paridad del motor en build/QA.",
+      "format": "PY",
+      "reader": "build",
+      "sha256": "f047c950526bd18b0f789834a1c9afb5a640933e5a323fa7ee72b92fba25a751",
+      "version": "2.0.0"
+    },
+    {
+      "file": "inputs.schema.json",
+      "drive_path": "/Apps/ageclarity/model/inputs.schema.json",
+      "purpose": "Contrato JSON Schema de entradas, unidades, validaciones y ayudas multilingües.",
+      "format": "JSON",
+      "reader": "app",
+      "sha256": "412314713c9b023ff2d60441e05b13176bba96ec7fb35ba71838816b5bc99da5",
+      "version": "2.0.0"
+    },
+    {
+      "file": "model_spec.json",
+      "drive_path": "/Apps/ageclarity/model/model_spec.json",
+      "purpose": "Especificación matemática, supuestos, validez, incertidumbre y versión del modelo.",
+      "format": "JSON",
+      "reader": "build",
+      "sha256": "4d410dbf9efb730beaa5f0fae17f623e711e68a9f93d8e856bccc99d9f50dc5b",
+      "version": "2.0.0"
+    },
+    {
+      "file": "outputs_spec.json",
+      "drive_path": "/Apps/ageclarity/model/outputs_spec.json",
+      "purpose": "Contrato de salidas y niveles de acceso gratis/pago/suscripción.",
+      "format": "JSON",
+      "reader": "app",
+      "sha256": "131a4c6649c274a00982dbf61bd318b09013aa48801789fe9b1adbe978ecbb97",
+      "version": "2.0.0"
+    },
+    {
+      "file": "report_template.json",
+      "drive_path": "/Apps/ageclarity/templates/report_template.json",
+      "purpose": "Estructura lógica del informe completo y secciones de salida.",
+      "format": "JSON",
+      "reader": "app",
+      "sha256": "0f5cbccf059ecb5287911ecb92439ccccc18fc545cb6618255dcef1adde3b711",
+      "version": "2.0.0"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "Metadata": {
+    "title": "AgeClarity — understand a PhenoAge estimate",
+    "description": "A transparent, privacy-first calculator for exploring the PhenoAge estimate from nine laboratory biomarkers."
+  },
+  "Home": {
+    "skip": "Skip to content",
+    "nav": {
+      "home": "AgeClarity home",
+      "primary": "Primary navigation",
+      "method": "Methodology",
+      "privacy": "Privacy",
+      "start": "Get started",
+      "language": "Language"
+    },
+    "hero": {
+      "eyebrow": "A CLEARER READ OF YOUR LAB RESULTS",
+      "title": "Your lab results, with more context.",
+      "body": "Explore a PhenoAge estimate based on a published model. Clear about the calculation, units, and limitations.",
+      "cta": "Start a calculation",
+      "secondary": "Explore the methodology",
+      "visualTitle": "From your results to a clear explanation",
+      "visualCaption": "No shortcuts or clinical conclusions",
+      "visualStep1": "Your values",
+      "visualStep2": "Published model",
+      "visualStep3": "An explained estimate",
+      "visualQualities": "Deterministic · Transparent · Private",
+      "privacy": "Calculated on your device",
+      "noAccount": "No account",
+      "noSave": "Your answers are not saved"
+    },
+    "intro": {
+      "eyebrow": "START WHEN YOU ARE READY",
+      "title": "An information tool, not a diagnosis.",
+      "body": "Enter your age and the nine biomarkers used by the model. You can review the units and method before you begin.",
+      "proofBiomarkers": "biomarkers",
+      "proofSteps": "clear steps",
+      "proofStored": "data stored"
+    },
+    "calculator": {
+      "eyebrow": "PHENOAGE CALCULATOR",
+      "title": "Calculate an estimate",
+      "subtitle": "You will need your age and exact results from a laboratory report.",
+      "stepLabel": "Step {current} of {total}",
+      "steps": {
+        "age": "Age",
+        "chemistry": "Chemistry",
+        "blood": "Blood count"
+      },
+      "ageTitle": "Let’s start with age",
+      "ageBody": "Use your age in completed years. We do not need your date of birth.",
+      "chemistryTitle": "Add your chemistry results",
+      "chemistryBody": "Copy each value as it appears on your report and select its unit.",
+      "bloodTitle": "Complete inflammation and blood count",
+      "bloodBody": "The model requires all nine biomarkers. We do not estimate missing values.",
+      "ageLabel": "Chronological age",
+      "ageHelp": "The model’s operating range is 20 to 84 years, inclusive.",
+      "years": "years",
+      "fields": {
+        "albumin": "Albumin",
+        "creatinine": "Creatinine",
+        "glucose": "Glucose",
+        "alp": "Alkaline phosphatase",
+        "crp": "C-reactive protein (CRP)",
+        "lymphocyte": "Lymphocytes",
+        "mcv": "Mean corpuscular volume (MCV)",
+        "rdw": "Red cell distribution width (RDW)",
+        "wbc": "White blood cells (WBC)",
+        "value": "{name} value",
+        "unit": "{name} unit"
+      },
+      "hints": {
+        "albumin": "Serum albumin.",
+        "creatinine": "Serum creatinine.",
+        "glucose": "Serum glucose.",
+        "alp": "Alkaline phosphatase in U/L.",
+        "crp": "Must be a measured value above zero. Do not enter results such as “< 0.3”.",
+        "lymphocyte": "Percentage, from 0 to 100.",
+        "mcv": "MCV in femtolitres.",
+        "rdw": "Use RDW-CV as a percentage.",
+        "wbc": "Total white blood cell count.",
+        "labUnit": "Select the unit shown on your report. Units are never converted silently."
+      },
+      "back": "Back",
+      "next": "Continue",
+      "calculate": "View my estimate",
+      "reset": "Clear and start over",
+      "edit": "Review my entries",
+      "errors": {
+        "required": "Enter the value exactly as it appears on your report.",
+        "age": "Enter an age from 20 to 84 years.",
+        "positive": "Enter a finite number greater than zero.",
+        "crp": "CRP must be greater than zero. We cannot calculate from a censored result such as “< 0.3”.",
+        "lymphocyte": "Enter a percentage from 0 to 100.",
+        "summary": "Review the highlighted fields to continue."
+      }
+    },
+    "result": {
+      "eyebrow": "INFORMATIONAL PREVIEW",
+      "title": "Your PhenoAge estimate",
+      "unit": "years",
+      "gap": "Difference from your chronological age",
+      "comparison": "Age comparison",
+      "chronological": "Chronological age",
+      "estimated": "Estimated PhenoAge",
+      "methodNote": "This difference is a mathematical output of the model. It is not a pace of ageing and does not establish a cause.",
+      "disclaimer": "This is a population-level estimate, not a diagnosis, life-expectancy prediction, or definitive measure of biological age. Do not make health decisions based on this result.",
+      "reportTitle": "Want to learn more about the method?",
+      "reportBody": "Extended reports and email delivery are not enabled in this version. Your data is not saved or sent.",
+      "methodLink": "Read the methodology",
+      "restart": "Clear results and start over"
+    },
+    "privacy": {
+      "eyebrow": "PRIVACY BY DESIGN",
+      "title": "Your lab results stay on this device.",
+      "body": "The calculator runs the model in your browser. We do not upload or save your results, ask for an account, or use analytics to collect health data.",
+      "note": "Closing or reloading this page clears the values you entered."
+    },
+    "method": {
+      "eyebrow": "HOW IT WORKS",
+      "title": "A published model, explained with care.",
+      "body": "PhenoAge combines chronological age and nine biomarkers through a deterministic equation. AgeClarity converts supported units and applies the documented coefficients; it does not use AI to calculate your result.",
+      "versionLabel": "Model version",
+      "version": "Clinical PhenoAge · BioAge 2026 · 2.0.0",
+      "source": "Primary methodology source",
+      "sourceLink": "Liu et al., PLOS Medicine (2018)",
+      "limitsTitle": "What this result cannot tell you",
+      "limits": "The original validation was conducted primarily in a United States population. We do not assume local calibration for Peru, Mexico, Spain, Brazil, or other countries. The gap is not a cause, personal prediction, or pace of ageing. Missing values are not imputed.",
+      "constant": "The primary estimate uses the 0.090165 constant specified in this package. A historical 0.09165 variant is retained as a sensitivity scenario and does not change the primary result. External scientific verification of this discrepancy is still pending.",
+      "link": "View the scientific publication"
+    },
+    "faq": {
+      "eyebrow": "FREQUENTLY ASKED QUESTIONS",
+      "title": "Before you begin",
+      "q1": "What is PhenoAge?",
+      "a1": "It is a published phenotypic estimate combining chronological age and nine biomarkers. It describes a population-level mathematical association; it does not measure a true biological age.",
+      "q2": "What if my report says “less than”?",
+      "a2": "Do not enter an approximate value. The calculator does not impute censored results; ask your laboratory or a health professional how to interpret it.",
+      "q3": "Does a higher result mean I have a disease?",
+      "a3": "No. This tool does not diagnose, detect, or rule out disease. Talk with a health professional about your lab results.",
+      "q4": "Is my data saved?",
+      "a4": "No. The calculation runs in your browser; values remain in memory while this page is open and are discarded when you reload or close it."
+    },
+    "footer": {
+      "brand": "AgeClarity",
+      "tagline": "Clarity about the method. Care with conclusions.",
+      "privacy": "Privacy",
+      "method": "Methodology",
+      "disclaimer": "Educational tool. It does not replace a consultation with a health professional."
+    }
+  }
+}

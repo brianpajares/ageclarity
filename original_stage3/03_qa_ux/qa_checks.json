@@ -1,0 +1,128 @@
+[
+  {
+    "check": "S201",
+    "resultado": "verificado",
+    "evidencia": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002718",
+    "severidad": "MENOR",
+    "accion": "Comprobada existencia y descripción principal de la fuente, no significa validación clínica del producto."
+  },
+  {
+    "check": "S202",
+    "resultado": "verificado",
+    "evidencia": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6388911/",
+    "severidad": "MENOR",
+    "accion": "Comprobada existencia y descripción principal de la fuente, no significa validación clínica del producto."
+  },
+  {
+    "check": "S203",
+    "resultado": "no_verificado",
+    "evidencia": "https://github.com/dayoonkwon/BioAge/blob/master/R/phenoage_calc.R",
+    "severidad": "MAYOR",
+    "accion": "Repositorio accesible, pero 0.090165 no recuperado como texto verificable en navegación; comprobación numérica de constante marcada preliminar."
+  },
+  {
+    "check": "S204",
+    "resultado": "no_verificado",
+    "evidencia": "https://github.com/dayoonkwon/BioAge/activity",
+    "severidad": "MENOR",
+    "accion": "Enlace/dato específico o licencia exacta no confirmados independientemente en esta sesión; requiere comprobación antes de publicación."
+  },
+  {
+    "check": "S205",
+    "resultado": "verificado",
+    "evidencia": "https://github.com/dayoonkwon/BioAge/blob/master/DESCRIPTION",
+    "severidad": "MENOR",
+    "accion": "Comprobada existencia y descripción principal de la fuente, no significa validación clínica del producto."
+  },
+  {
+    "check": "S206",
+    "resultado": "verificado",
+    "evidencia": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2011/DataFiles/BIOPRO_G.htm",
+    "severidad": "MENOR",
+    "accion": "Comprobada existencia y descripción principal de la fuente, no significa validación clínica del producto."
+  },
+  {
+    "check": "S207",
+    "resultado": "no_verificado",
+    "evidencia": "https://github.com/dayoonkwon/BioAge/discussions/35",
+    "severidad": "MENOR",
+    "accion": "Enlace/dato específico o licencia exacta no confirmados independientemente en esta sesión; requiere comprobación antes de publicación."
+  },
+  {
+    "check": "S208",
+    "resultado": "no_verificado",
+    "evidencia": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6312200/",
+    "severidad": "MENOR",
+    "accion": "Enlace/dato específico o licencia exacta no confirmados independientemente en esta sesión; requiere comprobación antes de publicación."
+  },
+  {
+    "check": "S209",
+    "resultado": "verificado",
+    "evidencia": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/HSCRP_L.htm",
+    "severidad": "MENOR",
+    "accion": "Comprobada existencia y descripción principal de la fuente, no significa validación clínica del producto."
+  },
+  {
+    "check": "S210",
+    "resultado": "verificado",
+    "evidencia": "https://data.worldbank.org/indicator/PA.NUS.PPP",
+    "severidad": "MENOR",
+    "accion": "Comprobada existencia y descripción principal de la fuente, no significa validación clínica del producto."
+  },
+  {
+    "check": "S211",
+    "resultado": "no_verificado",
+    "evidencia": "https://wdi.worldbank.org/table/4.16",
+    "severidad": "MAYOR",
+    "accion": "PPP 2025 y seis cifras nacionales no contrastadas directamente contra descarga versionada del Banco Mundial; precios quedan hipotéticos."
+  },
+  {
+    "check": "S212",
+    "resultado": "no_verificado",
+    "evidencia": "https://github.com/ComputationalAgingLab/ComputBioAge",
+    "severidad": "MENOR",
+    "accion": "Enlace/dato específico o licencia exacta no confirmados independientemente en esta sesión; requiere comprobación antes de publicación."
+  },
+  {
+    "check": "S213",
+    "resultado": "no_verificado",
+    "evidencia": "https://www.aging-us.com/article/100968/text",
+    "severidad": "MENOR",
+    "accion": "Enlace/dato específico o licencia exacta no confirmados independientemente en esta sesión; requiere comprobación antes de publicación."
+  },
+  {
+    "check": "S214",
+    "resultado": "no_verificado",
+    "evidencia": "https://www.cdc.gov/nchs/policy/data-user-agreement.html",
+    "severidad": "MENOR",
+    "accion": "Enlace/dato específico o licencia exacta no confirmados independientemente en esta sesión; requiere comprobación antes de publicación."
+  },
+  {
+    "check": "paridad_vectores",
+    "resultado": "28/28",
+    "evidencia": "qa_engine.py vs motor y expected",
+    "severidad": "MENOR",
+    "accion": "10 casos añadidos; corregida estabilidad numérica"
+  },
+  {
+    "check": "excel",
+    "resultado": "abierto; 10 hojas; parámetros completos",
+    "evidencia": "base_ageclarity.xlsx",
+    "severidad": "MENOR",
+    "accion": "Changelog y Casos_Prueba extendidos"
+  },
+  {
+    "check": "legal",
+    "resultado": "pendiente revisión jurisdiccional",
+    "evidencia": "model_card.md",
+    "severidad": "MAYOR",
+    "accion": "Bloquear mensajes diagnósticos; revisión antes de producción"
+  },
+  {
+    "check": "contrast_primary_white",
+    "resultado": "PASS",
+    "evidencia": "7.27:1",
+    "severidad": "MENOR",
+    "accion": "Contraste AA texto normal"
+  }
+]

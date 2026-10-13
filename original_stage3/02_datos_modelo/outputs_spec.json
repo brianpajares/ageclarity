@@ -1,0 +1,132 @@
+{
+  "version": "2.0.0",
+  "principle": "La cifra principal siempre proviene de engine_reference.py; el LLM solo puede redactar narrativa a partir de outputs.",
+  "outputs": [
+    {
+      "id": "phenoage",
+      "label_es": "Edad fenotípica",
+      "origin": "modelo principal",
+      "unit": "años",
+      "format": "1 decimal",
+      "access": "GRATIS"
+    },
+    {
+      "id": "age_gap",
+      "label_es": "Brecha vs. edad cronológica",
+      "origin": "phenoage - edad",
+      "unit": "años",
+      "format": "con signo, 1 decimal",
+      "access": "GRATIS"
+    },
+    {
+      "id": "gap_chart",
+      "label_es": "Gráfico edad vs. PhenoAge",
+      "origin": "age y phenoage",
+      "unit": "años",
+      "format": "barra/dumbbell",
+      "access": "GRATIS"
+    },
+    {
+      "id": "free_insight",
+      "label_es": "Insight metodológico",
+      "origin": "reglas deterministas sobre signo/magnitud sin umbrales clínicos",
+      "unit": null,
+      "format": "texto corto",
+      "access": "GRATIS"
+    },
+    {
+      "id": "local_sensitivity",
+      "label_es": "Sensibilidad por biomarcador",
+      "origin": "recalcular +1% uno-a-la-vez",
+      "unit": "años por +1%",
+      "format": "tabla/ranking",
+      "access": "INFORME_COMPLETO"
+    },
+    {
+      "id": "formula_version_scenario",
+      "label_es": "Escenario de versión 0.09165",
+      "origin": "ecuación alternativa documentada",
+      "unit": "años",
+      "format": "1 decimal + delta",
+      "access": "INFORME_COMPLETO"
+    },
+    {
+      "id": "data_quality_audit",
+      "label_es": "Auditoría de unidades y calidad",
+      "origin": "normalización/validaciones",
+      "unit": null,
+      "format": "tabla",
+      "access": "INFORME_COMPLETO"
+    },
+    {
+      "id": "questions_for_professional",
+      "label_es": "Preguntas para comentar con profesional",
+      "origin": "plantilla basada en valores/flags, no prescriptiva",
+      "unit": null,
+      "format": "lista",
+      "access": "INFORME_COMPLETO"
+    },
+    {
+      "id": "methodology",
+      "label_es": "Metodología y fuentes",
+      "origin": "model_card/model_spec",
+      "unit": null,
+      "format": "sección",
+      "access": "INFORME_COMPLETO"
+    },
+    {
+      "id": "country_or_percentile_comparison",
+      "label_es": "Comparativa por país/percentil",
+      "origin": "NO DISPONIBLE en v1: falta cohorte regional validada",
+      "unit": null,
+      "format": "bloque bloqueado/explicativo",
+      "access": "INFORME_COMPLETO_FUTURO"
+    },
+    {
+      "id": "trend",
+      "label_es": "Tendencia entre analíticas",
+      "origin": "dos o más cálculos comparables",
+      "unit": "años",
+      "format": "línea",
+      "access": "SUSCRIPCION"
+    }
+  ],
+  "free_preview": {
+    "includes": [
+      "phenoage",
+      "age_gap",
+      "gap_chart",
+      "free_insight"
+    ],
+    "does_not_include": [
+      "ranking completo de sensibilidad",
+      "escenario 0.09165",
+      "auditoría completa de cada biomarcador",
+      "preguntas para profesional",
+      "historial longitudinal",
+      "PDF descargable"
+    ],
+    "why": "La vista previa demuestra valor con el número commodity; el informe vende trazabilidad, contexto, escenarios y seguimiento."
+  },
+  "paid_report": {
+    "includes": [
+      "local_sensitivity",
+      "formula_version_scenario",
+      "data_quality_audit",
+      "questions_for_professional",
+      "methodology",
+      "PDF descargable"
+    ],
+    "recommendations_policy": "Solo recomendaciones de proceso (verificar unidades, repetir bajo condiciones comparables, conversar con profesional); no tratamiento, suplementos ni prescripción."
+  },
+  "subscription": {
+    "enabled_after_validation": true,
+    "condition": "Solo si >=25% de compradores repite una analítica/consulta de tendencia dentro de 12 meses o partners de laboratorio demandan seguimiento.",
+    "features": [
+      "historial",
+      "recalculo periódico tras nueva analítica",
+      "alertas de nueva medición cargada",
+      "comparación de condiciones de extracción"
+    ]
+  }
+}

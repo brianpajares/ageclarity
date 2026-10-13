@@ -1,0 +1,12 @@
+# Checklist salida (bloquea go-live si no pasa)
+- [ ] Revisión científica independiente de constante y claims; aviso no diagnóstico.
+- [ ] Revisión regulatoria y privacidad por cada país activo (GDPR/CCPA/LGPD/Ley 29733 según aplique); políticas y borrado.
+- [ ] Verificación de marca/dominio, TLS, CSP, admin MFA, RLS y cifrado.
+- [ ] Variables de entorno server-only, sin secretos en git/build, staging separado.
+- [ ] Dominio y DNS activos, SPF/DKIM/DMARC Resend validados.
+- [ ] Consentimiento explícito y correos correctos; owner email sin payload clínico.
+- [ ] Drive checksum y fallback ensayados; servicio cuenta permisos mínimos.
+- [ ] Golden vectors, e2e, accesibilidad WCAG, performance p95 y Lighthouse objetivos aprobados.
+- [ ] Tracking PostHog/Sentry sin PHI y sistema de incidentes activo.
+- [ ] Test real extremo a extremo con datos sintéticos; PDF revisado y flujo borrado.
+- [ ] Stripe totalmente inhabilitado en validation; facturación solo tras decisión documentada.

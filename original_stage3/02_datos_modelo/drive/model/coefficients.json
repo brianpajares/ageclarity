@@ -1,0 +1,27 @@
+{
+  "model_id": "clinical_phenoage_levine_bioage_2026",
+  "version": "2.0.0",
+  "parameters": {
+    "intercept": -19.90667,
+    "beta_albumin": -0.03359355,
+    "beta_creatinine": 0.009506491,
+    "beta_glucose": 0.1953192,
+    "beta_ln_crp": 0.09536762,
+    "beta_lymphocyte": -0.01199984,
+    "beta_mcv": 0.02676401,
+    "beta_rdw": 0.3306156,
+    "beta_alp": 0.001868778,
+    "beta_wbc": 0.05542406,
+    "beta_age": 0.08035356,
+    "gompertz_num": -1.51714,
+    "gompertz_den": 0.007692696,
+    "age_transform_scale": -0.0055305,
+    "age_transform_den": 0.090165,
+    "age_transform_intercept": 141.50225,
+    "historical_alt_den": 0.09165
+  },
+  "sources": [
+    "S203",
+    "S204"
+  ]
+}

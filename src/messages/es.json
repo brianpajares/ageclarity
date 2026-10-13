@@ -1,0 +1,152 @@
+{
+  "Metadata": {
+    "title": "AgeClarity — entiende una estimación PhenoAge",
+    "description": "Una calculadora informativa, transparente y privada para explorar la estimación PhenoAge de nueve biomarcadores de laboratorio."
+  },
+  "Home": {
+    "skip": "Saltar al contenido",
+    "nav": {
+      "home": "Inicio de AgeClarity",
+      "primary": "Navegación principal",
+      "method": "Metodología",
+      "privacy": "Privacidad",
+      "start": "Comenzar",
+      "language": "Idioma"
+    },
+    "hero": {
+      "eyebrow": "UNA LECTURA MÁS CLARA DE TUS ANÁLISIS",
+      "title": "Tus resultados de laboratorio, con más contexto.",
+      "body": "Explora una estimación PhenoAge basada en un modelo publicado. Transparente sobre el cálculo, las unidades y sus límites.",
+      "cta": "Iniciar cálculo",
+      "secondary": "Conocer la metodología",
+      "visualTitle": "De tus resultados a una explicación clara",
+      "visualCaption": "Sin atajos ni conclusiones clínicas",
+      "visualStep1": "Tus valores",
+      "visualStep2": "Modelo publicado",
+      "visualStep3": "Una estimación explicada",
+      "visualQualities": "Determinista · Transparente · Privado",
+      "privacy": "El cálculo ocurre en tu dispositivo",
+      "noAccount": "Sin cuenta",
+      "noSave": "Sin guardar tus respuestas"
+    },
+    "intro": {
+      "eyebrow": "EMPIEZA CUANDO QUIERAS",
+      "title": "Una herramienta informativa, no un diagnóstico.",
+      "body": "Introduce la edad y los nueve biomarcadores que pide el modelo. Puedes consultar las unidades y el método antes de empezar."
+      ,"proofBiomarkers": "biomarcadores",
+      "proofSteps": "pasos claros",
+      "proofStored": "datos guardados"
+    },
+    "calculator": {
+      "eyebrow": "CALCULADORA PHENOAGE",
+      "title": "Calcula una estimación",
+      "subtitle": "Necesitarás tu edad y los resultados exactos de un análisis de laboratorio.",
+      "stepLabel": "Paso {current} de {total}",
+      "steps": {
+        "age": "Edad",
+        "chemistry": "Bioquímica",
+        "blood": "Hemograma"
+      },
+      "ageTitle": "Empecemos por la edad",
+      "ageBody": "Usa tu edad en años cumplidos. No necesitamos tu fecha de nacimiento.",
+      "chemistryTitle": "Añade los datos de bioquímica",
+      "chemistryBody": "Copia cada resultado como aparece en tu informe y selecciona su unidad.",
+      "bloodTitle": "Completa inflamación y hemograma",
+      "bloodBody": "El modelo requiere los nueve biomarcadores. No estimamos datos faltantes.",
+      "ageLabel": "Edad cronológica",
+      "ageHelp": "El rango operativo del modelo es de 20 a 84 años, inclusive.",
+      "years": "años",
+      "fields": {
+        "albumin": "Albúmina",
+        "creatinine": "Creatinina",
+        "glucose": "Glucosa",
+        "alp": "Fosfatasa alcalina",
+        "crp": "Proteína C reactiva (PCR / CRP)",
+        "lymphocyte": "Linfocitos",
+        "mcv": "Volumen corpuscular medio (VCM / MCV)",
+        "rdw": "Ancho de distribución eritrocitaria (RDW)",
+        "wbc": "Leucocitos (WBC)",
+        "value": "Valor de {name}",
+        "unit": "Unidad de {name}"
+      },
+      "hints": {
+        "albumin": "Albúmina sérica.",
+        "creatinine": "Creatinina sérica.",
+        "glucose": "Glucosa sérica.",
+        "alp": "Fosfatasa alcalina en U/L.",
+        "crp": "Debe ser un valor medido mayor que cero. No uses resultados como «< 0,3».",
+        "lymphocyte": "Porcentaje, de 0 a 100.",
+        "mcv": "VCM / MCV en femtolitros.",
+        "rdw": "Usa RDW-CV en porcentaje.",
+        "wbc": "Recuento total de leucocitos.",
+        "labUnit": "Selecciona la unidad que aparece en tu informe. No convertimos unidades de forma silenciosa."
+      },
+      "back": "Atrás",
+      "next": "Continuar",
+      "calculate": "Ver mi estimación",
+      "reset": "Borrar y empezar de nuevo",
+      "edit": "Revisar mis datos",
+      "errors": {
+        "required": "Introduce el valor tal como aparece en el informe.",
+        "age": "Introduce una edad entre 20 y 84 años.",
+        "positive": "El valor debe ser un número finito mayor que cero.",
+        "crp": "La PCR debe ser mayor que cero. No podemos calcular con un resultado censurado como «< 0,3».",
+        "lymphocyte": "Introduce un porcentaje entre 0 y 100.",
+        "summary": "Revisa los campos señalados para continuar."
+      }
+    },
+    "result": {
+      "eyebrow": "VISTA PREVIA INFORMATIVA",
+      "title": "Tu estimación PhenoAge",
+      "unit": "años",
+      "gap": "Diferencia frente a tu edad cronológica",
+      "comparison": "Comparación de edades",
+      "chronological": "Edad cronológica",
+      "estimated": "PhenoAge estimado",
+      "methodNote": "La diferencia es una salida matemática del modelo. No representa un ritmo de envejecimiento ni demuestra una causa.",
+      "disclaimer": "Es una estimación poblacional, no un diagnóstico, una predicción de esperanza de vida ni una medición definitiva de edad biológica. No cambies decisiones de salud basándote en este resultado.",
+      "reportTitle": "¿Quieres profundizar en el método?",
+      "reportBody": "Los informes ampliados y el envío por correo no están habilitados en esta versión. Tus datos no se guardan ni se envían.",
+      "methodLink": "Leer la metodología",
+      "restart": "Borrar resultados y empezar de nuevo"
+    },
+    "privacy": {
+      "eyebrow": "PRIVACIDAD DESDE EL DISEÑO",
+      "title": "Tus análisis se quedan en este dispositivo.",
+      "body": "La calculadora ejecuta el modelo en tu navegador. No subimos ni guardamos tus resultados, no pedimos una cuenta y no usamos analítica para registrar datos de salud.",
+      "note": "Si cierras o recargas la página, se borran los valores que introdujiste."
+    },
+    "method": {
+      "eyebrow": "CÓMO FUNCIONA",
+      "title": "Un modelo publicado, explicado con cuidado.",
+      "body": "PhenoAge combina edad cronológica y nueve biomarcadores mediante una ecuación determinista. AgeClarity convierte las unidades permitidas y aplica los coeficientes documentados; no usa inteligencia artificial para calcular el resultado.",
+      "versionLabel": "Versión del modelo",
+      "version": "Clinical PhenoAge · BioAge 2026 · 2.0.0",
+      "source": "Fuente metodológica principal",
+      "sourceLink": "Liu et al., PLOS Medicine (2018)",
+      "limitsTitle": "Lo que el resultado no puede decir",
+      "limits": "La validación original se realizó principalmente en población de Estados Unidos. No asumimos calibración local para Perú, México, España, Brasil u otros países. La brecha no es una causa, una predicción personal ni un ritmo de envejecimiento. No se imputan valores faltantes.",
+      "constant": "La cifra principal usa la constante 0.090165 especificada en este paquete. Una variante histórica 0.09165 se conserva como escenario de sensibilidad y no cambia el resultado principal. La verificación científica externa de esta discrepancia sigue pendiente.",
+      "link": "Ver publicación científica"
+    },
+    "faq": {
+      "eyebrow": "PREGUNTAS FRECUENTES",
+      "title": "Antes de empezar",
+      "q1": "¿Qué es PhenoAge?",
+      "a1": "Es una estimación fenotípica publicada que combina edad cronológica y nueve biomarcadores. Describe una asociación matemática de población; no mide una edad biológica verdadera.",
+      "q2": "¿Qué hago si mi informe muestra «menor que»?",
+      "a2": "No introduzcas un valor aproximado. La calculadora no imputa resultados censurados; consulta al laboratorio o a un profesional sobre cómo interpretar ese resultado.",
+      "q3": "¿Un resultado más alto significa que tengo una enfermedad?",
+      "a3": "No. Esta herramienta no diagnostica, detecta ni descarta enfermedades. Conversa con un profesional de salud para interpretar tus análisis.",
+      "q4": "¿Se guardan mis datos?",
+      "a4": "No. El cálculo se realiza en tu navegador; los valores permanecen en memoria mientras la página está abierta y se descartan al recargar o cerrar."
+    },
+    "footer": {
+      "brand": "AgeClarity",
+      "tagline": "Claridad sobre el método. Cautela con las conclusiones.",
+      "privacy": "Privacidad",
+      "method": "Metodología",
+      "disclaimer": "Herramienta educativa. No sustituye una consulta con un profesional de salud."
+    }
+  }
+}

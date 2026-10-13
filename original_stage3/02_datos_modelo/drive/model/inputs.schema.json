@@ -1,0 +1,350 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ageclarity.app/schemas/inputs.schema.json",
+  "title": "AgeClarity inputs",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "age",
+    "chemistry",
+    "inflammation",
+    "cbc"
+  ],
+  "properties": {
+    "age": {
+      "type": "number",
+      "minimum": 20,
+      "maximum": 84,
+      "default": 42,
+      "unit": "years",
+      "help": {
+        "es": "Tu edad en años cumplidos.",
+        "en": "Your age in completed years.",
+        "pt": "Sua idade em anos completos."
+      },
+      "where": {
+        "es": "Documento de identidad o tu edad actual.",
+        "en": "ID document or your current age.",
+        "pt": "Documento de identidade ou sua idade atual."
+      }
+    },
+    "chemistry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "albumin",
+        "creatinine",
+        "glucose",
+        "alp"
+      ],
+      "properties": {
+        "albumin": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "enum": [
+                "g/L",
+                "g/dL"
+              ],
+              "default": "g/L"
+            }
+          },
+          "help": {
+            "es": "Albúmina sérica.",
+            "en": "Serum albumin.",
+            "pt": "Albumina sérica."
+          },
+          "where": {
+            "es": "Perfil bioquímico/hepático.",
+            "en": "Chemistry/liver panel.",
+            "pt": "Painel bioquímico/hepático."
+          }
+        },
+        "creatinine": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "enum": [
+                "umol/L",
+                "mg/dL"
+              ],
+              "default": "umol/L"
+            }
+          },
+          "help": {
+            "es": "Creatinina sérica.",
+            "en": "Serum creatinine.",
+            "pt": "Creatinina sérica."
+          },
+          "where": {
+            "es": "Perfil renal o bioquímico.",
+            "en": "Kidney or chemistry panel.",
+            "pt": "Painel renal ou bioquímico."
+          }
+        },
+        "glucose": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "enum": [
+                "mmol/L",
+                "mg/dL"
+              ],
+              "default": "mmol/L"
+            }
+          },
+          "help": {
+            "es": "Glucosa del análisis.",
+            "en": "Lab glucose result.",
+            "pt": "Glicose do exame."
+          },
+          "where": {
+            "es": "Glucosa/chemistry panel.",
+            "en": "Glucose/chemistry panel.",
+            "pt": "Glicose/painel bioquímico."
+          }
+        },
+        "alp": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "const": "U/L",
+              "default": "U/L"
+            }
+          },
+          "help": {
+            "es": "Fosfatasa alcalina (ALP/FA).",
+            "en": "Alkaline phosphatase (ALP).",
+            "pt": "Fosfatase alcalina (ALP/FA)."
+          },
+          "where": {
+            "es": "Perfil hepático/bioquímico.",
+            "en": "Liver/chemistry panel.",
+            "pt": "Painel hepático/bioquímico."
+          }
+        }
+      }
+    },
+    "inflammation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "crp"
+      ],
+      "properties": {
+        "crp": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "enum": [
+                "mg/dL",
+                "mg/L"
+              ],
+              "default": "mg/L"
+            }
+          },
+          "help": {
+            "es": "PCR o hs-CRP. Si el informe dice '<x', no ingreses x como si fuera una medición exacta.",
+            "en": "CRP or hs-CRP. If the report says '<x', do not enter x as an exact measurement.",
+            "pt": "PCR ou hs-CRP. Se o laudo disser '<x', não insira x como medida exata."
+          },
+          "where": {
+            "es": "Proteína C reactiva/PCR.",
+            "en": "C-reactive protein/CRP.",
+            "pt": "Proteína C reativa/PCR."
+          }
+        }
+      }
+    },
+    "cbc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lymphocyte_pct",
+        "mcv",
+        "rdw",
+        "wbc"
+      ],
+      "properties": {
+        "lymphocyte_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "unit": "%",
+          "help": {
+            "es": "Porcentaje de linfocitos.",
+            "en": "Lymphocyte percentage.",
+            "pt": "Percentual de linfócitos."
+          },
+          "where": {
+            "es": "Hemograma con diferencial.",
+            "en": "CBC with differential.",
+            "pt": "Hemograma com diferencial."
+          }
+        },
+        "mcv": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "const": "fL",
+              "default": "fL"
+            }
+          },
+          "help": {
+            "es": "VCM/MCV.",
+            "en": "MCV.",
+            "pt": "VCM/MCV."
+          },
+          "where": {
+            "es": "Hemograma.",
+            "en": "CBC.",
+            "pt": "Hemograma."
+          }
+        },
+        "rdw": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "const": "%",
+              "default": "%"
+            }
+          },
+          "help": {
+            "es": "ADE/RDW-CV en %.",
+            "en": "RDW-CV in %.",
+            "pt": "RDW-CV em %."
+          },
+          "where": {
+            "es": "Hemograma.",
+            "en": "CBC.",
+            "pt": "Hemograma."
+          }
+        },
+        "wbc": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "enum": [
+                "10^3/uL",
+                "10^9/L"
+              ],
+              "default": "10^3/uL"
+            }
+          },
+          "help": {
+            "es": "Leucocitos totales/WBC.",
+            "en": "Total white blood cell count/WBC.",
+            "pt": "Leucócitos totais/WBC."
+          },
+          "where": {
+            "es": "Hemograma.",
+            "en": "CBC.",
+            "pt": "Hemograma."
+          }
+        }
+      }
+    },
+    "country": {
+      "type": "string",
+      "enum": [
+        "MX",
+        "ES",
+        "BR",
+        "CO",
+        "PE",
+        "AR"
+      ],
+      "default": "MX",
+      "description": "Solo localización, precio y lenguaje; no cambia la fórmula."
+    }
+  },
+  "allOf": [
+    {
+      "description": "CRP debe ser un valor numérico medido >0; resultados censurados del tipo <x requieren nueva medición/valor reportado exacto."
+    },
+    {
+      "description": "No se permite calcular con biomarcadores faltantes. Las unidades se convierten antes de aplicar la fórmula."
+    }
+  ],
+  "x-unit-conversions": {
+    "albumin": {
+      "g/dL_to_g/L": 10
+    },
+    "creatinine": {
+      "mg/dL_to_umol/L": 88.4
+    },
+    "glucose": {
+      "mg/dL_to_mmol/L": 0.05551
+    },
+    "crp": {
+      "mg/L_to_mg/dL": 0.1
+    },
+    "wbc": {
+      "10^9/L_to_10^3/uL": 1.0
+    }
+  }
+}
