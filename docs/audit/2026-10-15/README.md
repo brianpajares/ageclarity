@@ -4,12 +4,29 @@ Fecha: 15 de octubre de 2026. Superficie: versión local de la rama `main` en Ch
 
 ## Recorrido y hallazgos
 
-1. **Inicio, escritorio — bueno.** [Captura](01-landing.png). La promesa, el método y la privacidad son visibles. El llamado a calcular es claro. La ilustración comunica el proceso, pero consume espacio que en móvil retrasa la calculadora.
-2. **Edad inválida — bueno con ajuste de lectura.** [Captura](02-age-error.png). Una edad de 17 años recibe un mensaje junto al campo y mantiene el valor para corregirlo. La ayuda, el error y otras notas usan letra demasiado pequeña.
-3. **Bioquímica — aceptable.** [Captura](03-chemistry.png). Los valores y sus unidades están juntos. Las ayudas apenas explican cómo identificar cada análisis; antes del resultado no hay una revisión consolidada de las conversiones.
-4. **Resultado — requiere mejora prioritaria.** [Captura](04-result.png). El cálculo de ejemplo muestra 35,9 años para una edad de 42, pero entrega esencialmente dos cifras y un gráfico. No explica cómo revisar los valores usados ni ofrece preguntas útiles para interpretar el informe con un profesional. El texto de límites es muy pequeño.
-5. **Inicio móvil — requiere mejora.** [Captura](05-mobile-landing.png). El encabezado y la acción principal caben, pero la ilustración ocupa gran parte de la primera pantalla y desplaza el producto hacia abajo.
-6. **Formulario móvil — aceptable con ajuste de espacio.** [Captura](06-mobile-form.png). El campo y la acción principal son accesibles a simple vista; el espacio vacío y el texto auxiliar pequeño hacen más larga y difícil la lectura.
+1. **Inicio, escritorio — bueno.** La promesa, el método y la privacidad son visibles. El llamado a calcular es claro. La ilustración comunica el proceso, pero consume espacio que en móvil retrasa la calculadora.
+
+   ![Inicio de escritorio antes de los cambios](01-landing.png)
+
+2. **Edad inválida — bueno con ajuste de lectura.** Una edad de 17 años recibe un mensaje junto al campo y mantiene el valor para corregirlo. La ayuda, el error y otras notas usan letra demasiado pequeña.
+
+   ![Error de edad antes de los cambios](02-age-error.png)
+
+3. **Bioquímica — aceptable.** Los valores y sus unidades están juntos. Las ayudas apenas explican cómo identificar cada análisis; antes del resultado no hay una revisión consolidada de las conversiones.
+
+   ![Bioquímica antes de los cambios](03-chemistry.png)
+
+4. **Resultado — requiere mejora prioritaria.** El cálculo de ejemplo muestra 35,9 años para una edad de 42, pero entrega esencialmente dos cifras y un gráfico. No explica cómo revisar los valores usados ni ofrece preguntas útiles para interpretar el informe con un profesional. El texto de límites es muy pequeño.
+
+   ![Resultado antes de los cambios](04-result.png)
+
+5. **Inicio móvil — requiere mejora.** El encabezado y la acción principal caben, pero la ilustración ocupa gran parte de la primera pantalla y desplaza el producto hacia abajo.
+
+   ![Inicio móvil antes de los cambios](05-mobile-landing.png)
+
+6. **Formulario móvil — aceptable con ajuste de espacio.** El campo y la acción principal son accesibles a simple vista; el espacio vacío y el texto auxiliar pequeño hacen más larga y difícil la lectura.
+
+   ![Formulario móvil antes de los cambios](06-mobile-form.png)
 
 ## Prioridades derivadas
 
@@ -27,5 +44,12 @@ Estas capturas muestran el aspecto y el recorrido local antes del cambio. No dem
 
 ## Pantallas después de las mejoras
 
-- [Inicio móvil](after-mobile-landing.png): la calculadora queda más cerca y la ilustración larga deja de ocupar la primera pantalla.
-- [Resultado de escritorio](after-desktop-result.png) y [resultado móvil](after-mobile-result.png): más contexto, preguntas y control desplegable de los datos usados. Las imágenes no muestran el formulario de correo porque continúa desactivado.
+El inicio móvil deja la calculadora más cerca y elimina la ilustración larga de la primera pantalla:
+
+![Inicio móvil después de los cambios](after-mobile-landing.png)
+
+El resultado añade contexto, preguntas y control desplegable de los datos usados. El formulario de correo no aparece porque continúa desactivado:
+
+![Resultado de escritorio después de los cambios](after-desktop-result.png)
+
+![Resultado móvil después de los cambios](after-mobile-result.png)
