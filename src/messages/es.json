@@ -35,7 +35,7 @@
       "body": "Introduce la edad y los nueve biomarcadores que pide el modelo. Puedes consultar las unidades y el método antes de empezar."
       ,"proofBiomarkers": "biomarcadores",
       "proofSteps": "pasos claros",
-      "proofStored": "datos guardados"
+      "proofStored": "biomarcadores guardados"
     },
     "calculator": {
       "eyebrow": "CALCULADORA PHENOAGE",
@@ -88,7 +88,7 @@
       "edit": "Revisar mis datos",
       "errors": {
         "required": "Introduce el valor tal como aparece en el informe.",
-        "age": "Introduce una edad entre 20 y 84 años.",
+        "age": "Introduce una edad en años enteros entre 20 y 84.",
         "positive": "El valor debe ser un número finito mayor que cero.",
         "crp": "La PCR debe ser mayor que cero. No podemos calcular con un resultado censurado como «< 0,3».",
         "lymphocyte": "Introduce un porcentaje entre 0 y 100.",
@@ -105,15 +105,37 @@
       "estimated": "PhenoAge estimado",
       "methodNote": "La diferencia es una salida matemática del modelo. No representa un ritmo de envejecimiento ni demuestra una causa.",
       "disclaimer": "Es una estimación poblacional, no un diagnóstico, una predicción de esperanza de vida ni una medición definitiva de edad biológica. No cambies decisiones de salud basándote en este resultado.",
+      "readingTitle": "Cómo leer tu resultado",
+      "readingBody": "La cifra combina tu edad con los nueve valores que introdujiste. La diferencia compara dos edades calculadas; no clasifica tu salud como buena o mala.",
+      "readingLimit": "Usa este resultado para entender el método y preparar preguntas, siempre junto con los rangos y el contexto de tu laboratorio.",
+      "questionsTitle": "Para conversar con un profesional",
+      "question1": "¿Cómo se interpretan estos análisis según mis antecedentes y los rangos de mi laboratorio?",
+      "question2": "¿Hay resultados que convenga confirmar o revisar antes de sacar conclusiones?",
+      "reviewTitle": "Ver los 10 datos usados en el cálculo",
+      "reviewBody": "Estos son los valores convertidos a las unidades que usa la fórmula. Comprueba que coinciden con tu informe.",
+      "reviewCaution": "Solo comprobamos formato, rango de edad y unidades admitidas; no evaluamos la exactitud del laboratorio ni la relevancia clínica de cada valor.",
       "reportTitle": "¿Quieres profundizar en el método?",
       "reportBody": "Los informes ampliados y el envío por correo no están habilitados en esta versión. Tus datos no se guardan ni se envían.",
       "methodLink": "Leer la metodología",
       "restart": "Borrar resultados y empezar de nuevo"
     },
+    "interest": {
+      "eyebrow": "INFORMES EN PREPARACIÓN",
+      "title": "Recibe un aviso cuando estén disponibles",
+      "body": "Si quieres conocer futuros informes ampliados, deja tu correo. Solo enviamos tu dirección y consentimiento; tus biomarcadores y este resultado siguen en tu dispositivo. Aún no hay PDF ni pagos.",
+      "emailLabel": "Correo electrónico",
+      "consent": "Acepto que AgeClarity guarde mi correo para confirmarme la solicitud y avisarme cuando haya informes disponibles. Puedo retirar el consentimiento respondiendo al mensaje.",
+      "privacyLink": "Cómo tratamos tu correo",
+      "submit": "Avisarme por correo",
+      "sending": "Enviando…",
+      "success": "Solicitud recibida. Comprueba tu correo para ver la confirmación. No hemos recibido tus análisis.",
+      "error": "No pudimos registrar la solicitud. Inténtalo de nuevo más tarde."
+    },
     "privacy": {
       "eyebrow": "PRIVACIDAD DESDE EL DISEÑO",
       "title": "Tus análisis se quedan en este dispositivo.",
       "body": "La calculadora ejecuta el modelo en tu navegador. No subimos ni guardamos tus resultados, no pedimos una cuenta y no usamos analítica para registrar datos de salud.",
+      "emailBody": "El aviso por correo es opcional. Si lo solicitas, guardamos tu dirección, idioma, fecha y versión del consentimiento hasta 90 días en Supabase; Resend envía la confirmación y el responsable recibe un aviso con tu dirección, sin análisis. Puedes pedir borrado respondiendo al correo. No usamos tu dirección para marketing.",
       "note": "Si cierras o recargas la página, se borran los valores que introdujiste."
     },
     "method": {
@@ -139,7 +161,7 @@
       "q3": "¿Un resultado más alto significa que tengo una enfermedad?",
       "a3": "No. Esta herramienta no diagnostica, detecta ni descarta enfermedades. Conversa con un profesional de salud para interpretar tus análisis.",
       "q4": "¿Se guardan mis datos?",
-      "a4": "No. El cálculo se realiza en tu navegador; los valores permanecen en memoria mientras la página está abierta y se descartan al recargar o cerrar."
+      "a4": "Los biomarcadores y el resultado solo permanecen en la memoria de esta página y se descartan al recargar. Si solicitas un aviso por correo, guardamos tu dirección y el consentimiento por separado."
     },
     "footer": {
       "brand": "AgeClarity",

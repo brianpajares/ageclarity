@@ -1,6 +1,13 @@
 # Implementation decisions
 
-Updated: 2026-10-13
+Updated: 2026-10-15
+
+## 2026-10-15: value and email readiness
+
+- Audited the local landing, age error, chemistry, result, and mobile flow with screenshots in `docs/audit/2026-10-15`. Increased essential text sizes, shortened the mobile landing and the form, and added plain-language result guidance, consultation questions, and a review of normalized inputs. These additions do not classify health status or attribute causality.
+- Prepared an optional report-availability email flow using Resend, Supabase, Turnstile and Upstash. It sends email address and consent metadata only. The owner receives an email address and request ID, never biomarker values or a full PDF. This intentionally differs from the attached monetization playbook, which would expose health data through owner email. Full reports and payments remain separate work requiring access controls, consent design, legal review and live-service checks.
+- The email flow is off by default behind public/private feature flags and a privacy-notice approval flag. Missing provider secrets, DNS verification, SQL installation, legal identity/notice review and real delivery checks prevent a production-readiness claim. See `docs/EMAIL_SETUP.md`.
+- Verification in this branch: local screenshots, TypeScript, lint, seven unit tests, three Chromium E2E tests, and a Next.js production build. Provider delivery, database permissions in a real Supabase project, Vercel Cron and real-world user value have not been verified.
 
 - Explicitly set the Vercel framework to Next.js in `vercel.json` after a production project returned `404 NOT_FOUND` even though the local production build served `/`. This is a deployment configuration change; Vercel project settings and the active production commit still require inspection in the Vercel dashboard. No local application behavior is changed.
 

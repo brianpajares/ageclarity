@@ -19,6 +19,7 @@ import { useMemo, useState } from "react";
 import { calculate, type CalculationInput, type CalculationResult } from "@/lib/model";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ReportInterestForm } from "@/components/report-interest-form";
 import { Link } from "@/i18n/routing";
 
 type MeasurementKey =
@@ -144,12 +145,18 @@ export function AgeClarityApp() {
       }),
     [numberLocale]
   );
+  const inputFormat = useMemo(
+    () => new Intl.NumberFormat(numberLocale, { maximumFractionDigits: 3 }),
+    [numberLocale]
+  );
 
   function validate(currentStep: 1 | 2 | 3): FieldErrors {
     const nextErrors: FieldErrors = {};
     if (currentStep === 1) {
       const age = parseField(form.age);
-      if (age === null || age < 20 || age > 84) nextErrors.age = t("calculator.errors.age");
+      if (age === null || !Number.isInteger(age) || age < 20 || age > 84) {
+        nextErrors.age = t("calculator.errors.age");
+      }
       return nextErrors;
     }
 
@@ -296,6 +303,20 @@ export function AgeClarityApp() {
     t("calculator.steps.chemistry"),
     t("calculator.steps.blood")
   ];
+  const reviewedInputs = result
+    ? [
+        { label: t("calculator.ageLabel"), value: result.normalized_inputs.age_years, unit: t("calculator.years") },
+        { label: t("calculator.fields.albumin"), value: result.normalized_inputs.albumin_gL, unit: "g/L" },
+        { label: t("calculator.fields.creatinine"), value: result.normalized_inputs.creatinine_umolL, unit: "µmol/L" },
+        { label: t("calculator.fields.glucose"), value: result.normalized_inputs.glucose_mmolL, unit: "mmol/L" },
+        { label: t("calculator.fields.alp"), value: result.normalized_inputs.alp_UL, unit: "U/L" },
+        { label: t("calculator.fields.crp"), value: result.normalized_inputs.crp_mg_dL, unit: "mg/dL" },
+        { label: t("calculator.fields.lymphocyte"), value: result.normalized_inputs.lymphocyte_pct, unit: "%" },
+        { label: t("calculator.fields.mcv"), value: result.normalized_inputs.mcv_fL, unit: "fL" },
+        { label: t("calculator.fields.rdw"), value: result.normalized_inputs.rdw_pct, unit: "%" },
+        { label: t("calculator.fields.wbc"), value: result.normalized_inputs.wbc_10e3uL, unit: "10³/µL" }
+      ]
+    : [];
 
   return (
     <>
@@ -459,14 +480,47 @@ export function AgeClarityApp() {
                     </div>
                   </div>
 
-                  <div className="report-note">
-                    <span className="report-note-icon"><FlaskConical size={19} /></span>
-                    <div>
-                      <h4>{t("result.reportTitle")}</h4>
-                      <p>{t("result.reportBody")}</p>
-                    </div>
-                    <a href="#methodology" className="report-method-link">{t("result.methodLink")} <ArrowUpRight size={16} /></a>
+                  <div className="result-guidance">
+                    <section className="guidance-card" aria-labelledby="reading-title">
+                      <h4 id="reading-title">{t("result.readingTitle")}</h4>
+                      <p>{t("result.readingBody")}</p>
+                      <p>{t("result.readingLimit")}</p>
+                    </section>
+                    <section className="guidance-card" aria-labelledby="questions-title">
+                      <h4 id="questions-title">{t("result.questionsTitle")}</h4>
+                      <ul>
+                        <li>{t("result.question1")}</li>
+                        <li>{t("result.question2")}</li>
+                      </ul>
+                    </section>
                   </div>
+
+                  <details className="input-review">
+                    <summary>{t("result.reviewTitle")}</summary>
+                    <p>{t("result.reviewBody")}</p>
+                    <dl>
+                      {reviewedInputs.map(({ label, value, unit }) => (
+                        <div key={label}>
+                          <dt>{label}</dt>
+                          <dd>{inputFormat.format(value)} {unit}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <p className="review-caution">{t("result.reviewCaution")}</p>
+                  </details>
+
+                  {process.env.NEXT_PUBLIC_REPORT_INTEREST_ENABLED === "true" ? (
+                    <ReportInterestForm />
+                  ) : (
+                    <div className="report-note">
+                      <span className="report-note-icon"><FlaskConical size={19} /></span>
+                      <div>
+                        <h4>{t("result.reportTitle")}</h4>
+                        <p>{t("result.reportBody")}</p>
+                      </div>
+                      <a href="#methodology" className="report-method-link">{t("result.methodLink")} <ArrowUpRight size={16} /></a>
+                    </div>
+                  )}
 
                   <div className="result-actions">
                     <Button variant="secondary" onClick={reset}>
@@ -594,6 +648,9 @@ export function AgeClarityApp() {
             <p className="eyebrow eyebrow--muted">{t("privacy.eyebrow")}</p>
             <h2>{t("privacy.title")}</h2>
             <p>{t("privacy.body")}</p>
+            {process.env.NEXT_PUBLIC_REPORT_INTEREST_ENABLED === "true" ? (
+              <p>{t("privacy.emailBody")}</p>
+            ) : null}
             <div className="privacy-note"><Check size={16} />{t("privacy.note")}</div>
           </div>
         </section>

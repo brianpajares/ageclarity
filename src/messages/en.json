@@ -35,7 +35,7 @@
       "body": "Enter your age and the nine biomarkers used by the model. You can review the units and method before you begin.",
       "proofBiomarkers": "biomarkers",
       "proofSteps": "clear steps",
-      "proofStored": "data stored"
+      "proofStored": "biomarkers stored"
     },
     "calculator": {
       "eyebrow": "PHENOAGE CALCULATOR",
@@ -88,7 +88,7 @@
       "edit": "Review my entries",
       "errors": {
         "required": "Enter the value exactly as it appears on your report.",
-        "age": "Enter an age from 20 to 84 years.",
+        "age": "Enter a whole-number age from 20 to 84 years.",
         "positive": "Enter a finite number greater than zero.",
         "crp": "CRP must be greater than zero. We cannot calculate from a censored result such as “< 0.3”.",
         "lymphocyte": "Enter a percentage from 0 to 100.",
@@ -105,15 +105,37 @@
       "estimated": "Estimated PhenoAge",
       "methodNote": "This difference is a mathematical output of the model. It is not a pace of ageing and does not establish a cause.",
       "disclaimer": "This is a population-level estimate, not a diagnosis, life-expectancy prediction, or definitive measure of biological age. Do not make health decisions based on this result.",
+      "readingTitle": "How to read your result",
+      "readingBody": "The estimate combines your age with the nine values you entered. The difference compares two calculated ages; it does not classify your health as good or bad.",
+      "readingLimit": "Use it to understand the method and prepare questions, alongside your laboratory's ranges and context.",
+      "questionsTitle": "Questions for a health professional",
+      "question1": "How should these results be read in light of my history and my laboratory's reference ranges?",
+      "question2": "Should any result be confirmed or reviewed before drawing conclusions?",
+      "reviewTitle": "Review the 10 inputs used in the calculation",
+      "reviewBody": "These values are converted to the units used by the formula. Check them against your lab report.",
+      "reviewCaution": "We only check format, age range, and supported units; we do not assess laboratory accuracy or the clinical relevance of each value.",
       "reportTitle": "Want to learn more about the method?",
       "reportBody": "Extended reports and email delivery are not enabled in this version. Your data is not saved or sent.",
       "methodLink": "Read the methodology",
       "restart": "Clear results and start over"
     },
+    "interest": {
+      "eyebrow": "REPORTS IN PREPARATION",
+      "title": "Get a notice when reports are available",
+      "body": "If you want to hear about future extended reports, leave your email. Only your address and consent are sent; your biomarkers and this result stay on your device. There is no PDF or payment yet.",
+      "emailLabel": "Email address",
+      "consent": "I agree that AgeClarity may save my email to confirm this request and notify me when reports are available. I can withdraw consent by replying to the message.",
+      "privacyLink": "How we use your email",
+      "submit": "Notify me by email",
+      "sending": "Sending…",
+      "success": "Request received. Check your email for a confirmation. We did not receive your lab results.",
+      "error": "We could not save your request. Please try again later."
+    },
     "privacy": {
       "eyebrow": "PRIVACY BY DESIGN",
       "title": "Your lab results stay on this device.",
       "body": "The calculator runs the model in your browser. We do not upload or save your results, ask for an account, or use analytics to collect health data.",
+      "emailBody": "The email notice is optional. If requested, we store your address, language, date, and consent version for up to 90 days in Supabase; Resend sends the confirmation and the owner receives an alert with your address, without lab results. You can request deletion by replying. We do not use your address for marketing.",
       "note": "Closing or reloading this page clears the values you entered."
     },
     "method": {
@@ -139,7 +161,7 @@
       "q3": "Does a higher result mean I have a disease?",
       "a3": "No. This tool does not diagnose, detect, or rule out disease. Talk with a health professional about your lab results.",
       "q4": "Is my data saved?",
-      "a4": "No. The calculation runs in your browser; values remain in memory while this page is open and are discarded when you reload or close it."
+      "a4": "Biomarkers and the result remain only in this page's memory and are discarded on reload. If you request an email notice, we save your address and consent separately."
     },
     "footer": {
       "brand": "AgeClarity",

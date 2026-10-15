@@ -37,6 +37,9 @@ test("calculates a local preview and supports changing language", async ({ page 
 
   await expect(page.getByRole("heading", { name: "Tu estimación PhenoAge" })).toBeVisible();
   await expect(page.locator(".result-number")).toContainText(/35[.,]9/);
+  await expect(page.getByRole("heading", { name: "Cómo leer tu resultado" })).toBeVisible();
+  await page.getByText("Ver los 10 datos usados en el cálculo").click();
+  await expect(page.locator(".input-review dd")).toHaveCount(10);
   expect(submittedCalculationRequests).toEqual([]);
 
   await page.getByRole("link", { name: "English" }).click();
@@ -50,6 +53,6 @@ test("rejects invalid age without clearing the entered value", async ({ page }) 
   await page.goto("/en");
   await page.getByLabel("Chronological age").fill("19");
   await page.getByRole("button", { name: "Continue" }).click();
-  await expect(page.getByRole("alert").first()).toContainText("Enter an age from 20 to 84 years.");
+  await expect(page.getByRole("alert").first()).toContainText("Enter a whole-number age from 20 to 84 years.");
   await expect(page.getByLabel("Chronological age")).toHaveValue("19");
 });

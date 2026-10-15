@@ -2,6 +2,8 @@
 
 Estado: 2026-10-13. El MVP de cálculo en navegador y las comprobaciones locales están implementados. Las tareas marcadas completas tienen comprobación de contrato o e2e local; CI hospedado y requisitos de lanzamiento quedan pendientes hasta ejecutarlos/configurarlos.
 
+Actualización 2026-10-15: la rama de mejoras añade contexto útil al resultado y prepara un aviso opcional por correo, desactivado hasta completar los pasos de `docs/EMAIL_SETUP.md`. El informe PDF y el cobro no forman parte de esta entrega.
+
 ## M0 Plataforma
 - [x] Inicializar Next.js App Router + TS strict, ESLint, Vitest y Playwright. Shadcn CLI no estuvo disponible; se usan primitivas locales accesibles. **Pendiente:** confirmar un primer CI hospedado.
 - [x] Implementar next-intl /es,/en,/pt, layout responsive y metadata SEO. **Pendiente:** revisión SEO en producción.

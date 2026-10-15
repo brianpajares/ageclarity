@@ -34,7 +34,7 @@ Playwright uses its bundled Chromium by default and uses a system Chromium when 
 
 ## Privacy and integrations
 
-The calculator keeps form values in page memory. The UI does not submit health data, store it in a database or browser storage, or send it to analytics. Reloading or resetting clears the values. `/api/v1/calculate` is a stateless preview endpoint and is not called by the UI; it does not persist inputs. Report delivery, email capture, accounts, payments, and admin tools are not enabled.
+The calculator keeps form values in page memory. The UI does not submit health data, store it in a database or browser storage, or send it to analytics. Reloading or resetting clears the values. `/api/v1/calculate` is a stateless preview endpoint and is not called by the UI; it does not persist inputs. An optional, disabled-by-default [email interest flow](docs/EMAIL_SETUP.md) can confirm requests for future reports without sending biomarkers. PDF report delivery, accounts, payments, and admin tools are not enabled.
 
 The optional `npm run drive:sync` command uploads only the static files listed in `spec/drive_manifest.json` after verifying their SHA-256 checksums. It requires `GOOGLE_SERVICE_ACCOUNT_JSON_BASE64` and `GOOGLE_DRIVE_FOLDER_ID`; the folder must be shared with the service account. The script uses the Google Drive API's `drive` scope and never prints the credential or access token. Keep credentials out of the repository and terminal history. `npm run drive:verify` needs no credentials or network.
 
